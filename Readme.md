@@ -45,7 +45,7 @@ Replace `/path/to/protos` with the path to the directory containing your .proto 
 Here's an example of how you can use the npm scripts to generate code:
 
 ```bash
-npm run generate:protos:amaterasu ./protos
+npm run generate:protos:amaterasu testing-folder/dummy.proto
 ```
 
 This command will generate code from the .proto files located in the `protos` directory.
