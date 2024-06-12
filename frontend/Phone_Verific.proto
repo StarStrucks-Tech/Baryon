@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+// Define the package name
+package example;
+option go_package = "dummy_server_gencode_path/";
+// Define the service
+service PhoneVerificationService {
+    // Define the RPC method
+    rpc GetPhoneVerificationScreen(GetPhoneVerificationScreenRequest) returns (GetPhoneVerificationScreenResponse);
+}
+
+// Define the request message
+message GetPhoneVerificationScreenRequest {
+
+   string title=1;
+   string sub_title=2;
+   string mob_number_heading=3;
+   string input_numb=4;
+   string mob_num_breifing=5;
+   string img1_url=6;
+   string img2_url=7;
+   Button next_button=8;
+}
+
+
+message GetPhoneVerificationScreenResponse {
+   ResponseType response_type=1;
+   string title=2;
+   string sub_title=3;
+   string mob_number_heading=4;
+   string input_numb=5;
+   string mob_num_breifing=6;
+   string img1_url=7;
+   string img2_url=8;
+   Button next_button=9;
+}
+
+message Button {
+    string text = 1;
+    string bg_color = 2;
+    CornerRadius corner_radius = 3;
+}
+
+message CornerRadius {
+    int32 top_left = 1;
+    int32 top_right = 2;
+    int32 bottom_left = 3;
+    int32 bottom_right = 4;
+}
+
+message TriggerPhoneVerificationRequest {
+    string mob_num = 1;
+}
+message TriggerPhoneVerificationResponse {
+    ResponseType response_type = 1;
+}
+
+enum ResponseType {
+    OTP_SENT = 0;
+    INVALID_MOBNUM = 1;
+    SERVER_FAILURE = 2;
+}
