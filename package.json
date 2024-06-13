@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generate:protos:amaterasu":"scripts/gencode-react-native-script.sh",
+    "generate:protos:amaterasu":"sh scripts/gencode-react-native-script.sh",
     "generate:protos:rinnegan":"scripts/gencode-go-script.sh"
   },
   "author": "",
