@@ -1,0 +1,8 @@
+syntax="proto3";
+import "./ServerDrivenMessages.proto";
+// message to contain the information for a button component
+message Button {
+    string text = 1;
+    string bg_color = 2;
+    CornerRadius corner_radius = 3;
+}
