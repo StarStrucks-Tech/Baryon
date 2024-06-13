@@ -1,7 +1,7 @@
 syntax = "proto3";
 import "../UI/Button.proto";
-import "../UI/CornerRadius.proto";
-import "../enum/ResponseType.proto";
+import "../UI/ServerDrivenMessages.proto";
+import "../enums/ResponseType.proto";
 
 // Define the package name
 package Phone_Verification;
