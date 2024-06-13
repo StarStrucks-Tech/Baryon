@@ -1,7 +1,0 @@
-syntax="proto3";
-
-enum ResponseType {
-    OTP_SENT = 0;
-    INVALID_PHONE_NUMBER = 1;
-    SERVER_FAILURE = 2;
-}

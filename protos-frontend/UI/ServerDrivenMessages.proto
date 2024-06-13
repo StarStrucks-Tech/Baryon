@@ -1,5 +1,6 @@
 syntax="proto3";
 
+// defines the corner radii for any element
 message CornerRadius {
     int32 top_left = 1;
     int32 top_right = 2;
