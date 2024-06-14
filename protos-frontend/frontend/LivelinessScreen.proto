@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-import "./UI/button_add.proto";
-import "./UI/cornerradius.proto";
-import "./enum/Response_type.proto";
+import "../UI/button_add.proto";
+import "../UI/cornerradius.proto";
+import "../enums/Response_type.proto";
 
 //Define the package name
 package liveliness;
