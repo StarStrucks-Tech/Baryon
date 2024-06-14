@@ -1,0 +1,7 @@
+syntax="proto3";
+
+message Button{
+    string text=1;
+    string bg_color=2;
+    CornerRadius corner_radius=3;
+}

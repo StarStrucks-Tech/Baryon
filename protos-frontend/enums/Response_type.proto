@@ -1,0 +1,7 @@
+syntax="proto3";
+
+enum ResponseType {
+    is_alive=0;
+    Invalid_text=1;
+    SERVER_FAILURE=2;
+}
