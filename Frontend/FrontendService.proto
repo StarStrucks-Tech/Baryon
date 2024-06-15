@@ -1,0 +1,40 @@
+syntax = "proto3";
+import "../UI/Button.proto";
+import "../UI/CornerRadius.proto";
+import "../Enum/ResponseType.proto";
+
+package EmailVerification;
+option go_package = "FrontendService/";
+
+service EmailVerificationService {
+    rpc GetEmailVerificationScreen(GetEmailVerificationScreenRequest) returns (GetEmailVerificationScreenResponse);
+}
+
+
+message GetEmailVerificationScreenRequest {
+    string img_url = 1;
+    string title = 2;
+    string sub_title = 3;
+    string frame = 4;
+    string your_emailid = 5;
+    string your_name = 6;
+    Button next_button = 7;
+}
+
+message GetEmailVerificationScreenResponse {
+    ResponseType response_type = 1;
+    string img_url = 2;
+    string title = 3;
+    string sub_title = 4;
+    string frame = 5;
+    string your_emailid = 6;
+    string your_name = 7;
+    Button next_button = 8;
+}
+
+message TriggerEmailVerificationRequest {
+    string email_id = 1;
+}
+message TriggerEmailVerificationResponse {
+    ResponseType response_type = 1;
+}

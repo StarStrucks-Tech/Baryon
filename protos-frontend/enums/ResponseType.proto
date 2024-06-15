@@ -6,3 +6,8 @@ enum PhoneNumberVerificationResponseType {
     INVALID_PHONE_NUMBER = 1;
     SERVER_FAILURE = 2;
 }
+enum EmailVerificationResponseType {
+    OTP_SENT = 0;
+    INVALID_EMAILID = 1;
+    SERVER_FAILURE = 2;
+}

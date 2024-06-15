@@ -4,7 +4,7 @@ import "../UI/ServerDrivenMessages.proto";
 import "../enums/ResponseType.proto";
 
 // Define the package name
-package Phone_Verification;
+package FrontendService;
 
 option go_package = "FrontendService/";
 // Define the service
@@ -12,6 +12,8 @@ service FrontendService {
     // RPC to get the phone verification
     rpc GetPhoneVerificationScreen(GetPhoneVerificationScreenRequest) returns (GetPhoneVerificationScreenResponse);
     rpc TriggerPhoneVerification(TriggerPhoneVerificationRequest) returns (TriggerPhoneVerificationResponse);
+    rpc GetEmailVerificationScreen(GetEmailVerificationScreenRequest) returns (GetEmailVerificationScreenResponse);
+    rpc TriggerEmailVerification(TriggerEmailVerificationRequest) returns (TriggerEmailVerificationResponse);
 }
 
 // Define the request message
