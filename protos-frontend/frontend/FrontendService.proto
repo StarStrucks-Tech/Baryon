@@ -42,29 +42,17 @@ message TriggerPhoneVerificationResponse {
 
 
 message GetEmailVerificationScreenRequest {
-    string img_url = 1;
-    string title = 2;
-    string sub_title = 3;
-    string frame = 4;
-    string your_emailid = 5;
-    string your_name = 6;
-    ui.Button next_button = 7;
+
 }
 
 message GetEmailVerificationScreenResponse {
     enums.VerificationResponseType response_type = 1;
-    string img_url = 2;
-    string title = 3;
-    string sub_title = 4;
-    string frame = 5;
-    string your_emailid = 6;
-    string your_name = 7;
-    ui.Button next_button = 8;
+    Button primary_button = 2;
 }
 
 message TriggerEmailVerificationRequest {
     string email_id = 1;
 }
 message TriggerEmailVerificationResponse {
-    enums.VerificationResponseType response_type = 1;
+    EmailVerificationResponseType response_type = 1;
 }
