@@ -10,6 +10,8 @@ service FrontendService {
     // RPC to get the phone verification
     rpc GetPhoneVerificationScreen(GetPhoneVerificationScreenRequest) returns (GetPhoneVerificationScreenResponse);
     rpc TriggerPhoneVerification(TriggerPhoneVerificationRequest) returns (TriggerPhoneVerificationResponse);
+    rpc GetEmailVerificationScreen(GetEmailVerificationScreenRequest) returns (GetEmailVerificationScreenResponse);
+    rpc TriggerEmailVerification(TriggerEmailVerificationRequest) returns (TriggerEmailVerificationResponse);
 }
 
 // Define the request message
@@ -34,5 +36,27 @@ message TriggerPhoneVerificationRequest {
 }
 
 message TriggerPhoneVerificationResponse {
-    enums.PhoneNumberVerificationResponseType response_type = 1;
+    enums.VerificationResponseType response_type = 1;
+}
+
+
+
+message GetEmailVerificationScreenRequest {
+
+}
+
+message GetEmailVerificationScreenResponse {
+    enums.VerificationResponseType response_type = 1;
+    string title = 2;
+    string sub_title = 3;
+    ui.Button primary_button = 4;
+    string img_url = 5;
+}
+
+message TriggerEmailVerificationRequest {
+    string email_id = 1;
+    string user_name = 2;
+}
+message TriggerEmailVerificationResponse {
+    enums.VerificationResponseType response_type = 1;
 }
