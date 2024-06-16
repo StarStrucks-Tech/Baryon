@@ -20,3 +20,4 @@ message ExampleResponse {
     // Add fields as needed
     string reply = 1;
 }
+
