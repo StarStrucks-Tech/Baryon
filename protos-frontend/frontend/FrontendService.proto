@@ -1,12 +1,10 @@
 syntax = "proto3";
-import "../UI/Button.proto";
-import "../UI/ServerDrivenMessages.proto";
-import "../enums/ResponseType.proto";
-
+import "protos-frontend/enums/ResponseType.proto";
+import "protos-frontend/ui/Button.proto";
 // Define the package name
-package Phone_Verification;
+package Frontend;
 
-option go_package = "FrontendService/";
+option go_package = "Rinnegan/proto-generated/protos-frontend/frontend";
 // Define the service
 service FrontendService {
     // RPC to get the phone verification
@@ -27,7 +25,7 @@ message GetPhoneVerificationScreenResponse {
    string input_number = 4;
    string phone_number_breifing = 5;
    string img1_url = 6;
-   Button primary_button = 8;
+   ui.Button primary_button = 8;
 }
 
 
@@ -36,5 +34,5 @@ message TriggerPhoneVerificationRequest {
 }
 
 message TriggerPhoneVerificationResponse {
-    PhoneNumberVerificationResponseType response_type = 1;
+    enums.PhoneNumberVerificationResponseType response_type = 1;
 }
