@@ -1,5 +1,10 @@
 syntax="proto3";
-import "./ServerDrivenMessages.proto";
+
+import "protos-frontend/ui/ServerDrivenMessages.proto";
+// Define the package name
+package ui;
+
+option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
 // message to contain the information for a button component
 message Button {
     string text = 1;
