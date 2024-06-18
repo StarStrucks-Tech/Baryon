@@ -1,8 +1,11 @@
 syntax="proto3";
+// Define the package name
+package enums;
 
+option go_package = "Rinnegan/proto-generated/protos-frontend/enums";
 // enum that identifies the state for the phone number verification response type
-enum PhoneNumberVerificationResponseType {
-    OTP_SENT = 0;
-    INVALID_PHONE_NUMBER = 1;
-    SERVER_FAILURE = 2;
+enum VerificationResponseType {
+    is_alive = 0 ;
+    INVALID_PARAMETERS = 1 ;
+    SERVER_FAILURE = 2 ;
 }

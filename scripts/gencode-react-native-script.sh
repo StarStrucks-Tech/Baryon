@@ -1,1 +1,2 @@
-npx proto-loader-gen-types --grpcLib=@grpc/grpc-js --outDir=../Amaterasu/src/gencode $1
+protoc --plugin=./node_modules/.bin/protoc-gen-ts_proto \
+ --ts_proto_out=../Amaterasu/src/gencode $1
