@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+// Import the ServerDrivenMessages.proto file to include the TextStyle message definition.
+import "protos-frontend/ui/ServerDrivenMessages.proto";
+
+// Define the package name
+package ui;
+
+option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
+
+// Define a message structure for a Text element.
+message Text {
+  // The actual text content.
+  string text = 1;
+
+  // The style applied to the text.
+  ui.TextStyle text_style = 2;
+}

@@ -1,62 +1,44 @@
 syntax = "proto3";
+
 import "protos-frontend/enums/ResponseType.proto";
+import "protos-frontend/enums/BiometryTypes.proto";
 import "protos-frontend/ui/Button.proto";
+import "protos-frontend/ui/Image.proto";
+import "protos-frontend/ui/Text.proto";
+
 // Define the package name
 package Frontend;
 
 option go_package = "Rinnegan/proto-generated/protos-frontend/frontend";
-// Define the service
-service FrontendService {
-    // RPC to get the phone verification
-    rpc GetPhoneVerificationScreen(GetPhoneVerificationScreenRequest) returns (GetPhoneVerificationScreenResponse);
-    rpc TriggerPhoneVerification(TriggerPhoneVerificationRequest) returns (TriggerPhoneVerificationResponse);
-    rpc GetEmailVerificationScreen(GetEmailVerificationScreenRequest) returns (GetEmailVerificationScreenResponse);
-    rpc TriggerEmailVerification(TriggerEmailVerificationRequest) returns (TriggerEmailVerificationResponse);
+
+/**
+    Define a service for biometric consent
+    This service provides a single RPC method for getting biometric consent
+*/
+service BiometricConsentService {
+  // RPC method to get biometric consent
+  rpc GetBiometricConsentScreen(GetBiometricConsentScreenRequest) returns (GetBiometricConsentScreenResponse);
 }
 
 // Define the request message
-message GetPhoneVerificationScreenRequest {
-
+message GetBiometricConsentScreenRequest {
+  string user_id = 1;
+  enums.BiometryTypes biometry_type = 2;
+  ui.Image top_image = 3;
+  ui.Text header = 4;
+  ui.Text top_text = 5;
+  ui.Image lock_icon = 6;
+  ui.Text paragraph_text = 7;
+  ui.Button primary_button = 8;
 }
 
-
-message GetPhoneVerificationScreenResponse {
-   string title = 1;
-   string sub_title = 2;
-   string phone_number_heading = 3;
-   string input_number = 4;
-   string phone_number_breifing = 5;
-   string img1_url = 6;
-   ui.Button primary_button = 8;
-}
-
-
-message TriggerPhoneVerificationRequest {
-    string phone_number = 1;
-}
-
-message TriggerPhoneVerificationResponse {
-    enums.VerificationResponseType response_type = 1;
-}
-
-
-
-message GetEmailVerificationScreenRequest {
-
-}
-
-message GetEmailVerificationScreenResponse {
-    enums.VerificationResponseType response_type = 1;
-    string title = 2;
-    string sub_title = 3;
-    ui.Button primary_button = 4;
-    string img_url = 5;
-}
-
-message TriggerEmailVerificationRequest {
-    string email_id = 1;
-    string user_name = 2;
-}
-message TriggerEmailVerificationResponse {
-    enums.VerificationResponseType response_type = 1;
+// Define the response message
+message GetBiometricConsentScreenResponse {
+  ui.Image top_image = 1;
+  ui.Text header = 2;
+  ui.Text top_text = 3;
+  ui.Image lock_icon = 4;
+  ui.Text paragraph_text = 5;
+  ui.Button primary_button = 6;
+  enums.ErrorCode error_code=7;
 }

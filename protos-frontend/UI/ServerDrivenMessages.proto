@@ -4,10 +4,26 @@ syntax="proto3";
 package ui;
 
 option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
-// defines the corner radii for any element
+
+// Define a message structure for corner radius properties.
 message CornerRadius {
     int32 top_left = 1;
     int32 top_right = 2;
     int32 bottom_left = 3;
     int32 bottom_right = 4;
+}
+
+// Define a message structure for text style properties.
+message TextStyle {
+  // The font size of the text.
+  float font_size = 1;
+
+  // The font weight of the text
+  string font_weight = 2;
+
+   // The color of the text.
+  string color = 3;
+
+  // Indicates whether the text alignment is centered.
+  bool text_align_center = 4;
 }

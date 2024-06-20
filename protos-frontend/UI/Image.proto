@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+// Define the package name
+package ui;
+
+option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
+
+// Define a message structure for an Image.
+message Image {
+  // The source of the image.
+  string source = 1;
+
+  // The width of the image.
+  float width = 2;
+
+  // The height of the image.
+  float height = 3;
+}
