@@ -1,6 +1,7 @@
 syntax = "proto3";
 import "protos-frontend/enums/ResponseType.proto";
 import "protos-frontend/ui/Button.proto";
+import "protos-frontend/ui/CoinFrame.proto";
 // Define the package name
 package Frontend;
 
@@ -10,6 +11,10 @@ service FrontendService {
     // RPC to get the phone verification
     rpc GetPhoneVerificationScreen(GetPhoneVerificationScreenRequest) returns (GetPhoneVerificationScreenResponse);
     rpc TriggerPhoneVerification(TriggerPhoneVerificationRequest) returns (TriggerPhoneVerificationResponse);
+
+    rpc GetPhoneOTPVerificationScreen(GetPhoneOTPVerificationScreenRequest) returns (GetPhoneOTPVerificationScreenResponse);
+    rpc TriggerPhoneOTPVerification(TriggerPhoneOTPVerificationRequest) returns (TriggerPhoneOTPVerificationResponse);
+
     rpc GetEmailVerificationScreen(GetEmailVerificationScreenRequest) returns (GetEmailVerificationScreenResponse);
     rpc TriggerEmailVerification(TriggerEmailVerificationRequest) returns (TriggerEmailVerificationResponse);
 }
@@ -39,7 +44,29 @@ message TriggerPhoneVerificationResponse {
     enums.VerificationResponseType response_type = 1;
 }
 
+message GetPhoneOTPVerificationScreenRequest {
 
+}
+
+message GetPhoneOTPVerificationScreenResponse {
+   repeated CoinFrame coin_flip = 1;         
+   string title = 2;
+   string description = 3;
+   string input_otp = 4;
+   string wait_text = 5;
+   string timer = 6;
+   string resend_otp_text = 7;
+   ui.Button primary_button = 8;
+}
+
+
+message TriggerPhoneOTPVerificationRequest {
+    string otp = 1;
+}
+
+message TriggerPhoneOTPVerificationResponse {
+    enums.VerificationResponseType response_type = 1;
+}
 
 message GetEmailVerificationScreenRequest {
 
