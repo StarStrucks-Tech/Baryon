@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+/**
+ * Import Image message from ui/Image.proto
+ * This import allows us to use the Image message in our NotificationsConsent message
+ */
+import "protos-frontend/ui/Image.proto";
+
+/**
+ * Import Text message from ui/Text.proto
+ * This import allows us to use the Text message in our NotificationsConsent message
+ */
+import "protos-frontend/ui/Text.proto";
+
+/**
+ * Define the package name
+ * This package contains messages related to UI components
+ */
+package ui;
+
+/**
+ * Set the Go package name to "Rinnegan/proto-generated/protos-frontend/ui"
+ * This option specifies the Go package name to use when generating code
+ */
+option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
+
+/**
+ * NotificationsConsent message
+ * Represents a Notification consent component, which includes an image, header text, and description text
+ */
+message NotificationsConsent {
+ /**
+   * Image associated with the notifications consent
+   */
+  ui.Image image = 1;
+
+  /**
+   * Header text for the notifications consent
+   */
+  ui.Text header = 2;
+
+  /**
+   * Text description for the notifications consent
+   */
+  ui.Text text = 3;
+}

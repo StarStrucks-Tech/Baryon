@@ -7,6 +7,7 @@ option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
 
 // Define a message structure for an Image.
 message Image {
+  
   // The source of the image.
   string source = 1;
 

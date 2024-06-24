@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+/**
+ * Import Button message from ui/Button.proto
+ * This import allows us to use the Button message in our Modal message
+ */
+import "protos-frontend/ui/Button.proto";
+
+/**
+ * Import Text message from ui/Text.proto
+ * This import allows us to use the Text message in our Modal message
+ */
+import "protos-frontend/ui/Text.proto";
+
+/**
+ * Import ServerDrivenMessages message from ui/ServerDrivenMessages.proto
+ * This import allows us to use the ServerDrivenMessages message in our Modal message
+ */
+import "protos-frontend/ui/ServerDrivenMessages.proto";
+
+/**
+ * Define the package name
+ * This package contains messages related to UI components
+ */
+package ui;
+
+/**
+ * Set the Go package name to "Rinnegan/proto-generated/protos-frontend/ui"
+ * This option specifies the Go package name to use when generating code
+ */
+option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
+
+/**
+ * Modal message
+ * Represents a modal component, which includes visibility, text, button, width, height, and corner radius
+ */
+message Modal {
+  /**
+   * Visibility of the modal
+   * This field indicates whether the modal is visible or not
+   */
+  bool visible = 1;
+
+  /**
+   * Text content of the modal
+   * This field contains the text to be displayed in the modal
+   */
+  ui.Text modal_text = 2;
+
+  /**
+   * Button associated with the modal
+   * This field contains the button to be displayed in the modal
+   */
+  ui.Button modal_button = 3;
+
+  /**
+   * Width of the modal
+   * This field specifies the width of the modal
+   */
+  float width = 4;
+
+  /**
+   * Height of the modal
+   * This field specifies the height of the modal
+   */
+  float height = 5;
+
+  /**
+   * Corner radius of the modal
+   * This field specifies the corner radius of the modal
+   */
+  ui.CornerRadius modal_radius = 6;
+}

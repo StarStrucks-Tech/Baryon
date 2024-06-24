@@ -1,10 +1,11 @@
 syntax="proto3";
+
 // Define the package name
 package enums;
 
 option go_package = "Rinnegan/proto-generated/protos-frontend/enums";
 
-enum ErrorCode {
+enum ErrorType {
   // Default value indicating an unknown error.
   UNKNOWN_ERROR = 0;
 

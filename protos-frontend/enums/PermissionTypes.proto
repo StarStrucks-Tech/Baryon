@@ -1,0 +1,31 @@
+syntax="proto3";
+
+/**
+ * Define the package name
+ * This package contains enumeration types
+ */
+package enums;
+
+/**
+ * Set the Go package name to "Rinnegan/proto-generated/protos-frontend/enums"
+ * This option specifies the Go package name to use when generating code
+ */
+option go_package = "Rinnegan/proto-generated/protos-frontend/enums";
+
+/**
+ * PermissionType enumeration
+ * Represents different types of permissions
+ */
+enum PermissionType {
+  /**
+   * Notifications permission type
+   * This value represents permission for notifications
+   */
+  NOTIFICATIONS = 0;
+
+  /**
+   * Location permission type
+   * This value represents permission for location access
+   */
+  LOCATION = 1;
+}

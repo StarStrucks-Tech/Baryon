@@ -10,6 +10,7 @@ option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
 
 // Define a message structure for a Text element.
 message Text {
+  
   // The actual text content.
   string text = 1;
 

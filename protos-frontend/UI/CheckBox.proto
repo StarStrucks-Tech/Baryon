@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+// Import Text message from ui/Text.proto
+import "protos-frontend/ui/Text.proto";
+
+// Define the package name
+package ui;
+
+// Set the Go package name to "Rinnegan/proto-generated/protos-frontend/ui"
+option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
+
+/**
+ * CheckBox message
+ * Represents a checkbox component.
+ */
+message CheckBox {
+  /**
+   * Value of the checkbox (true if checked, false if unchecked)
+   */
+  bool value = 1;
+
+  /**
+   * Text associated with the checkbox
+   */
+  ui.Text text = 2;
+}
