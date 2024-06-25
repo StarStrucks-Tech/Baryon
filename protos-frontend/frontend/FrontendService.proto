@@ -1,8 +1,8 @@
 syntax = "proto3";
 import "protos-frontend/enums/ResponseType.proto";
-import "protos-frontend/ui/Button.proto";
+import "protos-frontend/UI/Button.proto";
 // Define the package name
-package Frontend;
+package frontend;
 
 option go_package = "Rinnegan/proto-generated/protos-frontend/frontend";
 // Define the service
@@ -27,7 +27,7 @@ message GetPhoneVerificationScreenResponse {
    string input_number = 4;
    string phone_number_breifing = 5;
    string img1_url = 6;
-   ui.Button primary_button = 8;
+   UI.Button primary_button = 8;
 }
 
 
@@ -49,7 +49,7 @@ message GetEmailVerificationScreenResponse {
     enums.VerificationResponseType response_type = 1;
     string title = 2;
     string sub_title = 3;
-    ui.Button primary_button = 4;
+    UI.Button primary_button = 4;
     string img_url = 5;
 }
 
