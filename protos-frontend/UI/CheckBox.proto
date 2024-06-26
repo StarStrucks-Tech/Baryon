@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-// Import Text message from ui/Text.proto
-import "protos-frontend/ui/Text.proto";
+// Import Text message from UI/Text.proto
+import "protos-frontend/UI/Text.proto";
 
 // Define the package name
 package ui;

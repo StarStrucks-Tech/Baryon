@@ -6,26 +6,26 @@ import "protos-frontend/enums/ResponseType.proto";
 // Import PermissionTypes enum from enums/PermissionTypes.proto
 import "protos-frontend/enums/PermissionTypes.proto";
 
-// Import Button message from ui/Button.proto
-import "protos-frontend/ui/Button.proto";
+// Import Button message from UI/Button.proto
+import "protos-frontend/UI/Button.proto";
 
-// Import Image message from ui/Image.proto
-import "protos-frontend/ui/Image.proto";
+// Import Image message from UI/Image.proto
+import "protos-frontend/UI/Image.proto";
 
-// Import Text message from ui/Text.proto
-import "protos-frontend/ui/Text.proto";
+// Import Text message from UI/Text.proto
+import "protos-frontend/UI/Text.proto";
 
-// Import LocationConsent message from ui/LocationConsent.proto
-import "protos-frontend/ui/LocationConsent.proto";
+// Import LocationConsent message from UI/LocationConsent.proto
+import "protos-frontend/UI/LocationConsent.proto";
 
-// Import NotificationsConsent message from ui/NotificationsConsent.proto
-import "protos-frontend/ui/NotificationsConsent.proto";
+// Import NotificationsConsent message from UI/NotificationsConsent.proto
+import "protos-frontend/UI/NotificationsConsent.proto";
 
-// Import Modal message from ui/Modal.proto
-import "protos-frontend/ui/Modal.proto";
+// Import Modal message from UI/Modal.proto
+import "protos-frontend/UI/Modal.proto";
 
-// Import CheckBox message from ui/CheckBox.proto
-import "protos-frontend/ui/CheckBox.proto";
+// Import CheckBox message from UI/CheckBox.proto
+import "protos-frontend/UI/CheckBox.proto";
 
 
 // Define the package name
@@ -50,6 +50,7 @@ service OtherConsentsService {
  * Represents the request to get the Other Consents screen.
  */
 message GetOtherConsentsScreenRequest {
+
   /**
    * User ID of the user requesting the screen
    */
@@ -65,7 +66,7 @@ message GetOtherConsentsScreenRequest {
    */
   repeated enums.PermissionType requested_permissions = 3;
 
-  /**
+ /**
    * Device ID of the device making the request
    */
   string device_id = 4;
@@ -91,7 +92,7 @@ message GetOtherConsentsScreenResponse {
    * Header text to display on the permission screen
    */
   ui.Text permission_header = 2;
-  
+
   /**
    * Paragraph text to display on the permission screen
    */
@@ -107,7 +108,7 @@ message GetOtherConsentsScreenResponse {
    */
   ui.LocationConsent location_consent = 5;
 
-  /**
+/**
    * Next button component
    */
   ui.Button next_button = 6;
@@ -117,12 +118,12 @@ message GetOtherConsentsScreenResponse {
    */
   ui.CheckBox agreement_checkbox = 7;
 
-  /**
+   /**
    * Alert modal component
    */
   ui.Modal alert_modal = 8;
 
-  /**
+   /**
    * Error type (if any)
    */
    enums.ErrorType error = 9;

@@ -1,7 +1,7 @@
 syntax="proto3";
 
 // Import the ServerDrivenMessages.proto file to include the TextStyle and CornerRadius message definition.
-import "protos-frontend/ui/ServerDrivenMessages.proto";
+import "protos-frontend/UI/ServerDrivenMessages.proto";
 
 // Define the package name
 package ui;

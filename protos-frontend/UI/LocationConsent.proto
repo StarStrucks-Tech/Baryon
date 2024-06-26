@@ -1,16 +1,16 @@
 syntax = "proto3";
 
 /**
- * Import Image message from ui/Image.proto
+ * Import Image message from UI/Image.proto
  * This import allows us to use the Image message in our LocationConsent message
  */
-import "protos-frontend/ui/Image.proto";
+import "protos-frontend/UI/Image.proto";
 
 /**
- * Import Text message from ui/Text.proto
+ * Import Text message from UI/Text.proto
  * This import allows us to use the Text message in our LocationConsent message
  */
-import "protos-frontend/ui/Text.proto";
+import "protos-frontend/UI/Text.proto";
 
 /**
  * Define the package name
