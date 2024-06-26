@@ -48,15 +48,14 @@ message GetPhoneOTPVerificationScreenRequest {
 
 }
 
-message GetPhoneOTPVerificationScreenResponse {
-   repeated CoinFrame coin_flip = 1;         
-   string title = 2;
-   string description = 3;
-   string input_otp = 4;
-   string wait_text = 5;
-   string timer = 6;
-   string resend_otp_text = 7;
-   ui.Button primary_button = 8;
+message GetPhoneOTPVerificationScreenResponse {   
+   string title = 1;
+   string description = 2;
+   string input_otp = 3;
+   string wait_text = 4;
+   int32 timer = 5;
+   string resend_otp_text = 6;
+   ui.Button primary_button = 7;
 }
 
 
