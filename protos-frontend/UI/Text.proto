@@ -1,9 +1,7 @@
 syntax = "proto3";
 
-// Import the ServerDrivenMessages.proto file to include the TextStyle message definition.
 import "protos-frontend/UI/ServerDrivenMessages.proto";
 
-// Define the package name
 package UI;
 
 option go_package = "Rinnegan/proto-generated/protos-frontend/UI";

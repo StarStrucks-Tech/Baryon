@@ -1,9 +1,5 @@
 syntax="proto3";
 
-/**
- * Define the package name
- * This package contains enumeration types
- */
 package enums;
 
 /**

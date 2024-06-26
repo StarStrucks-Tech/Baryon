@@ -1,130 +1,175 @@
 syntax = "proto3";
 
-// Import ResponseType enum from enums/ResponseType.proto
+import "google/protobuf/timestamp.proto";
 import "protos-frontend/enums/ResponseType.proto";
-
-// Import PermissionTypes enum from enums/PermissionTypes.proto
-import "protos-frontend/enums/PermissionTypes.proto";
-
-// Import Button message from UI/Button.proto
 import "protos-frontend/UI/Button.proto";
-
-// Import Image message from UI/Image.proto
+import "protos-frontend/frontend/generic/GenericMessages.proto";
 import "protos-frontend/UI/Image.proto";
-
-// Import Text message from UI/Text.proto
 import "protos-frontend/UI/Text.proto";
-
-// Import LocationConsent message from UI/LocationConsent.proto
-import "protos-frontend/UI/LocationConsent.proto";
-
-// Import NotificationsConsent message from UI/NotificationsConsent.proto
 import "protos-frontend/UI/NotificationsConsent.proto";
-
-// Import Modal message from UI/Modal.proto
+import "protos-frontend/UI/LocationConsent.proto";
+import "protos-frontend/UI/CheckBox.proto";
 import "protos-frontend/UI/Modal.proto";
 
-// Import CheckBox message from UI/CheckBox.proto
-import "protos-frontend/UI/CheckBox.proto";
-
-
-// Define the package name
 package frontend;
 
 option go_package = "Rinnegan/proto-generated/protos-frontend/frontend";
-
-/**
- * Service definition for OtherConsentsService
- * This service provides the Other Consents feature.
- */
+// Define the service
 service FrontendService {
-  /**
-   * RPC method to get the Other Consents screen
-   * Returns the Other Consents screen for a given user.
-   */
-  rpc GetOtherConsentsScreen(GetOtherConsentsScreenRequest) returns (GetOtherConsentsScreenResponse);
+    // RPC to get the phone verification
+    rpc GetPhoneVerificationScreen(generic.EmptyRequest) returns (GetPhoneVerificationScreenResponse){}
+    rpc TriggerPhoneVerification(TriggerPhoneOTPVerificationRequest) returns (TriggerPhoneVerificationResponse){}
+
+    rpc GetPhoneOTPVerificationScreen(generic.EmptyRequest) returns (GetPhoneOTPVerificationScreenResponse){}
+    rpc TriggerPhoneOTPVerification(TriggerPhoneOTPVerificationRequest) returns (TriggerPhoneOTPVerificationResponse){}
+
+    rpc GetEmailVerificationScreen(generic.EmptyRequest) returns (GetEmailVerificationScreenResponse){}
+    rpc TriggerEmailVerification(TriggerEmailVerificationRequest) returns (TriggerEmailVerificationResponse){}
+    
+    rpc GetPanVerificationScreen(generic.EmptyRequest) returns (GetPanVerificationScreenResponse){}
+    rpc TriggerPanVerification(TriggerPanVerificationRequest) returns (TriggerPanVerificationResponse){}
+
+    rpc GetLivenessCheckScreen(generic.EmptyRequest) returns (GetLivenessCheckScreenResponse){}
+    rpc TriggerLivenessCheck(TriggerLivenessCheckRequest) returns (TriggerLivenessCheckResponse){}
+    
+    // RPC method to get biometric consent
+    rpc GetBiometricConsentScreen(generic.EmptyRequest) returns (GetBiometricConsentScreenResponse){}
+
+    rpc GetOtherConsentsScreen(generic.EmptyRequest) returns (GetOtherConsentsScreenResponse){}
 }
 
-/**
- * Request message for GetOtherConsentsScreen RPC
- * Represents the request to get the Other Consents screen.
- */
-message GetOtherConsentsScreenRequest {
-
-  /**
-   * User ID of the user requesting the screen
-   */
-  string user_id = 1;
-
-  /**
-   * Whether the user has granted permission
-   */
-  bool is_permission_granted = 2;
-
-  /**
-   * List of permissions being requested
-   */
-  repeated enums.PermissionType requested_permissions = 3;
-
- /**
-   * Device ID of the device making the request
-   */
-  string device_id = 4;
-
-  /**
-   * App version of the app making the request
-   */
-  string app_version = 5;
+message TriggerPhoneVerificationResponse {
+    enums.VerificationResponseType response_type = 1;
 }
 
-/**
- * Response message for GetOtherConsentsScreen RPC
- * Represents the response to the GetOtherConsentsScreen RPC method.
- */
-message GetOtherConsentsScreenResponse {
+message GetPhoneOTPVerificationScreenResponse {   
+   string title = 1;
+   string description = 2;
+   string wait_text = 3;
+   int32 timer_in_seconds = 4;
+   string resend_otp_text = 5;
+   UI.Button primary_button = 6;
+}
 
-  /**
-   * Image to display on the permission screen
-   */
-  UI.Image permission_image = 1;
+message TriggerPhoneOTPVerificationRequest {
+    string otp = 1;
+}
 
-  /**
-   * Header text to display on the permission screen
-   */
-  UI.Text permission_header = 2;
+message TriggerPhoneOTPVerificationResponse {
+    enums.VerificationResponseType response_type = 1;
+}
 
-  /**
-   * Paragraph text to display on the permission screen
-   */
-  UI.Text permission_paragraph = 3;
+message GetEmailVerificationScreenResponse {
+    string title = 1;
+    string sub_title = 2;
+    UI.Button primary_button = 3;
+    string img_url = 4;
+}
 
-  /**
-   * Notifications consent component
-   */
-  UI.NotificationsConsent notifications_consent = 4;
+message TriggerEmailVerificationRequest {
+    string email_id = 1;
+    string user_name = 2;
+}
+message TriggerEmailVerificationResponse {
+    enums.VerificationResponseType response_type = 1;
+}
 
-  /**
+message GetPhoneVerificationScreenResponse {
+    string title = 1;
+    string sub_title = 2;
+    string phone_number_heading = 3;
+    string input_number = 4;
+    string phone_number_breifing = 5;
+    string img1_url = 6;
+    UI.Button primary_button = 8;
+ }
+
+message GetPanVerificationScreenResponse {
+    string image_url = 1;
+    string title = 2;
+    string description = 3;
+    string pan_number = 4;
+    google.protobuf.Timestamp date_of_birth = 5;
+    string details_storage_permission_text = 6;
+    string info_usage_permission_text = 7;
+    UI.Button next_button = 8;
+    string no_pan_text = 9;
+}
+
+message TriggerPanVerificationRequest {
+    string pan_number = 1;
+    google.protobuf.Timestamp date_of_birth = 2;
+}
+
+message TriggerPanVerificationResponse {
+    enums.VerificationResponseType response_type = 1;
+    string otp = 2;
+}
+
+message GetLivenessCheckScreenResponse {
+    string otp_to_show = 1 ;
+    UI.Button next_button = 2;
+}
+
+message TriggerLivenessCheckRequest {
+    string otp_spoken = 1;
+}
+
+message TriggerLivenessCheckResponse {
+    enums.LivenessCheckStatus liveness_check_status = 1;
+}
+  
+  // Define the response message
+  message GetBiometricConsentScreenResponse {
+    UI.Image top_image = 1;
+    UI.Text header = 2;
+    UI.Text top_text = 3;
+    UI.Image lock_icon = 4;
+    UI.Text paragraph_text = 5;
+    UI.Button primary_button = 6;
+    enums.ErrorType error_code=7;
+  }
+
+  message GetOtherConsentsScreenResponse {
+
+    /**
+     * Image to display on the permission screen
+     */
+    UI.Image permission_image = 1;
+  
+    /**
+     * Header text to display on the permission screen
+     */
+    UI.Text permission_header = 2;
+     /**
+    * Paragraph text to display on the permission screen
+    */
+    UI.Text permission_paragraph = 3;
+    /**
+    * Notifications consent component
+    */
+    UI.NotificationsConsent notifications_consent = 4;
+    /**
    * Location consent component
    */
-  UI.LocationConsent location_consent = 5;
-
-/**
+   UI.LocationConsent location_consent = 5;
+    /**
    * Next button component
    */
-  UI.Button next_button = 6;
-
-  /**
-   * Agreement checkbox component
-   */
-  UI.CheckBox agreement_checkbox = 7;
+   UI.Button next_button = 6;
 
    /**
-   * Alert modal component
-   */
-  UI.Modal alert_modal = 8;
-
-   /**
-   * Error type (if any)
-   */
-   enums.ErrorType error = 9;
-}
+    * Agreement checkbox component
+    */
+   UI.CheckBox agreement_checkbox = 7;
+ 
+    /**
+    * Alert modal component
+    */
+   UI.Modal alert_modal = 8;
+ 
+    /**
+    * Error type (if any)
+    */
+    enums.ErrorType error = 9;
+  }  
