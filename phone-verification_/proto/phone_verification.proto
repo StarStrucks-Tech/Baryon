@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package phoneverification;
+
+option go_package = "github.com/StarStrucks-Tech/Baryon/phone-verification/generated";
+
+// The request message containing the phone number to verify
+message VerifyPhoneNumberRequest {
+    string phone_number = 1;
+}
+
+// The response message containing the verification result
+message VerifyPhoneNumberResponse {
+    enum Status {
+        INVALID = 0;
+        VALID = 1;
+        ERROR = 2;
+    }
+    Status status = 1;
+    string message = 2;
+    string otp = 3; // OTP will be set only if the status is VALID
+}
+
+// The phone verification service definition
+service PhoneVerificationService {
+    rpc VerifyPhoneNumber(VerifyPhoneNumberRequest) returns (VerifyPhoneNumberResponse);
+}
