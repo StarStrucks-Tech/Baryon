@@ -2,6 +2,7 @@ syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 import "protos-frontend/enums/ResponseType.proto";
 import "protos-frontend/UI/Button.proto";
+import "protos-frontend/frontend/generic/GenericMessages.proto";
 // Define the package name
 package frontend;
 
@@ -9,22 +10,20 @@ option go_package = "Rinnegan/proto-generated/protos-frontend/frontend";
 // Define the service
 service FrontendService {
     // RPC to get the phone verification
-    rpc GetPhoneVerificationScreen(GetPhoneVerificationScreenRequest) returns (GetPhoneVerificationScreenResponse);
-    rpc TriggerPhoneVerification(TriggerPhoneVerificationRequest) returns (TriggerPhoneVerificationResponse);
+    rpc GetPhoneVerificationScreen(generic.EmptyRequest) returns (GetPhoneVerificationScreenResponse){}
+    rpc TriggerPhoneVerification(TriggerPhoneOTPVerificationRequest) returns (TriggerPhoneVerificationResponse){}
 
-    rpc GetPhoneOTPVerificationScreen(GetPhoneOTPVerificationScreenRequest) returns (GetPhoneOTPVerificationScreenResponse);
-    rpc TriggerPhoneOTPVerification(TriggerPhoneOTPVerificationRequest) returns (TriggerPhoneOTPVerificationResponse);
+    rpc GetPhoneOTPVerificationScreen(generic.EmptyRequest) returns (GetPhoneOTPVerificationScreenResponse){}
+    rpc TriggerPhoneOTPVerification(TriggerPhoneOTPVerificationRequest) returns (TriggerPhoneOTPVerificationResponse){}
 
-    rpc GetEmailVerificationScreen(GetEmailVerificationScreenRequest) returns (GetEmailVerificationScreenResponse);
-    rpc TriggerEmailVerification(TriggerEmailVerificationRequest) returns (TriggerEmailVerificationResponse);
+    rpc GetEmailVerificationScreen(generic.EmptyRequest) returns (GetEmailVerificationScreenResponse){}
+    rpc TriggerEmailVerification(TriggerEmailVerificationRequest) returns (TriggerEmailVerificationResponse){}
     
-    rpc GetPanVerificationScreen(GetPanVerificationScreenRequest) returns (GetPanVerificationScreenResponse);
-    rpc TriggerPanVerification(TriggerPanVerificationRequest) returns (TriggerPanVerificationResponse);
-}
+    rpc GetPanVerificationScreen(generic.EmptyRequest) returns (GetPanVerificationScreenResponse){}
+    rpc TriggerPanVerification(TriggerPanVerificationRequest) returns (TriggerPanVerificationResponse){}
 
-// Define the request message
-message GetPhoneVerificationScreenRequest {
-
+    rpc GetLivenessCheckScreen(generic.EmptyRequest) returns (GetLivenessCheckScreenResponse){}
+    rpc TriggerLivenessCheck(TriggerLivenessCheckRequest) returns (TriggerLivenessCheckResponse){}
 }
 
 
@@ -35,20 +34,11 @@ message GetPhoneVerificationScreenResponse {
    string input_number = 4;
    string phone_number_breifing = 5;
    string img1_url = 6;
-   UI.Button primary_button = 7;
-}
-
-
-message TriggerPhoneVerificationRequest {
-    string phone_number = 1;
+   UI.Button primary_button = 8;
 }
 
 message TriggerPhoneVerificationResponse {
     enums.VerificationResponseType response_type = 1;
-}
-
-message GetPhoneOTPVerificationScreenRequest {
-
 }
 
 message GetPhoneOTPVerificationScreenResponse {   
@@ -69,10 +59,6 @@ message TriggerPhoneOTPVerificationResponse {
     enums.VerificationResponseType response_type = 1;
 }
 
-message GetEmailVerificationScreenRequest {
-
-}
-
 message GetEmailVerificationScreenResponse {
     string title = 1;
     string sub_title = 2;
@@ -87,12 +73,6 @@ message TriggerEmailVerificationRequest {
 message TriggerEmailVerificationResponse {
     enums.VerificationResponseType response_type = 1;
 }
-
-//Pan verification
-message GetPanVerificationScreenRequest{
-
-}
-
 
 message GetPanVerificationScreenResponse {
     string image_url = 1;
@@ -114,4 +94,17 @@ message TriggerPanVerificationRequest {
 message TriggerPanVerificationResponse {
     enums.VerificationResponseType response_type = 1;
     string otp = 2;
+}
+
+message GetLivenessCheckScreenResponse {
+    string otp_to_show = 1 ;
+    UI.Button next_button = 2;
+}
+
+message TriggerLivenessCheckRequest {
+    string otp_spoken = 1;
+}
+
+message TriggerLivenessCheckResponse {
+    enums.LivenessCheckStatus liveness_check_status = 1;
 }
