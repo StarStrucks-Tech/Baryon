@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-message CoinFrame {
-    string img_url = 1;                // URL or path to the image
-    bytes image_data = 2;              // Byte array representing image data
-}
