@@ -1,4 +1,5 @@
 syntax = "proto3";
+import "google/protobuf/timestamp.proto";
 import "protos-frontend/enums/ResponseType.proto";
 import "protos-frontend/UI/Button.proto";
 // Define the package name
@@ -12,6 +13,10 @@ service FrontendService {
     rpc TriggerPhoneVerification(TriggerPhoneVerificationRequest) returns (TriggerPhoneVerificationResponse);
     rpc GetEmailVerificationScreen(GetEmailVerificationScreenRequest) returns (GetEmailVerificationScreenResponse);
     rpc TriggerEmailVerification(TriggerEmailVerificationRequest) returns (TriggerEmailVerificationResponse);
+    rpc GetPanVerificationScreen(GetPanVerificationScreenRequest) returns
+    (GetPanVerificationScreenResponse);
+    rpc TriggerPanVerification(TriggerPanVerificationRequest) returns
+    (TriggerPanVerificationResponse);
 }
 
 // Define the request message
@@ -58,5 +63,33 @@ message TriggerEmailVerificationRequest {
     string user_name = 2;
 }
 message TriggerEmailVerificationResponse {
+    enums.VerificationResponseType response_type = 1;
+}
+
+//Pan verification
+message GetPanVerificationScreenRequest{
+
+}
+
+
+message GetPanVerificationScreenResponse {
+    enums.VerificationResponseType response_type = 1;
+    string image_url = 2;
+    string pan_screen_title = 3;
+    string pan_screen_description = 4;
+    string pan_number = 5;
+    google.protobuf.Timestamp date_of_birth = 6;
+    string details_storage_permission_text = 7;
+    string info_usage_permission_text = 8;
+    UI.Button next_button = 9;
+    string no_pan_text = 10;
+}
+
+message TriggerPanVerificationRequest {
+    string pan_number = 5;
+    google.protobuf.Timestamp date_of_birth = 6;
+}
+
+message TriggerPanVerificationResponse {
     enums.VerificationResponseType response_type = 1;
 }
