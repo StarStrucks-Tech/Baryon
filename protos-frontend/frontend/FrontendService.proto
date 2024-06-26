@@ -1,6 +1,6 @@
 syntax = "proto3";
 import "protos-frontend/enums/ResponseType.proto";
-import "protos-frontend/ui/Button.proto";
+import "protos-frontend/UI/Button.proto";
 // Define the package name
 package frontend;
 
