@@ -11,12 +11,15 @@ service FrontendService {
     // RPC to get the phone verification
     rpc GetPhoneVerificationScreen(GetPhoneVerificationScreenRequest) returns (GetPhoneVerificationScreenResponse);
     rpc TriggerPhoneVerification(TriggerPhoneVerificationRequest) returns (TriggerPhoneVerificationResponse);
+
+    rpc GetPhoneOTPVerificationScreen(GetPhoneOTPVerificationScreenRequest) returns (GetPhoneOTPVerificationScreenResponse);
+    rpc TriggerPhoneOTPVerification(TriggerPhoneOTPVerificationRequest) returns (TriggerPhoneOTPVerificationResponse);
+
     rpc GetEmailVerificationScreen(GetEmailVerificationScreenRequest) returns (GetEmailVerificationScreenResponse);
     rpc TriggerEmailVerification(TriggerEmailVerificationRequest) returns (TriggerEmailVerificationResponse);
-    rpc GetPanVerificationScreen(GetPanVerificationScreenRequest) returns
-    (GetPanVerificationScreenResponse);
-    rpc TriggerPanVerification(TriggerPanVerificationRequest) returns
-    (TriggerPanVerificationResponse);
+    
+    rpc GetPanVerificationScreen(GetPanVerificationScreenRequest) returns (GetPanVerificationScreenResponse);
+    rpc TriggerPanVerification(TriggerPanVerificationRequest) returns (TriggerPanVerificationResponse);
 }
 
 // Define the request message
@@ -44,7 +47,27 @@ message TriggerPhoneVerificationResponse {
     enums.VerificationResponseType response_type = 1;
 }
 
+message GetPhoneOTPVerificationScreenRequest {
 
+}
+
+message GetPhoneOTPVerificationScreenResponse {   
+   string title = 1;
+   string description = 2;
+   string wait_text = 3;
+   int32 timer_in_seconds = 4;
+   string resend_otp_text = 5;
+   UI.Button primary_button = 6;
+}
+
+
+message TriggerPhoneOTPVerificationRequest {
+    string otp = 1;
+}
+
+message TriggerPhoneOTPVerificationResponse {
+    enums.VerificationResponseType response_type = 1;
+}
 
 message GetEmailVerificationScreenRequest {
 
