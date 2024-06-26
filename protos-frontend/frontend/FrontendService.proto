@@ -1,4 +1,5 @@
 syntax = "proto3";
+import "google/protobuf/timestamp.proto";
 import "protos-frontend/enums/ResponseType.proto";
 import "protos-frontend/UI/Button.proto";
 // Define the package name
@@ -12,6 +13,10 @@ service FrontendService {
     rpc TriggerPhoneVerification(TriggerPhoneVerificationRequest) returns (TriggerPhoneVerificationResponse);
     rpc GetEmailVerificationScreen(GetEmailVerificationScreenRequest) returns (GetEmailVerificationScreenResponse);
     rpc TriggerEmailVerification(TriggerEmailVerificationRequest) returns (TriggerEmailVerificationResponse);
+    rpc GetPanVerificationScreen(GetPanVerificationScreenRequest) returns
+    (GetPanVerificationScreenResponse);
+    rpc TriggerPanVerification(TriggerPanVerificationRequest) returns
+    (TriggerPanVerificationResponse);
 }
 
 // Define the request message
@@ -27,7 +32,7 @@ message GetPhoneVerificationScreenResponse {
    string input_number = 4;
    string phone_number_breifing = 5;
    string img1_url = 6;
-   UI.Button primary_button = 8;
+   UI.Button primary_button = 7;
 }
 
 
@@ -46,11 +51,10 @@ message GetEmailVerificationScreenRequest {
 }
 
 message GetEmailVerificationScreenResponse {
-    enums.VerificationResponseType response_type = 1;
-    string title = 2;
-    string sub_title = 3;
-    UI.Button primary_button = 4;
-    string img_url = 5;
+    string title = 1;
+    string sub_title = 2;
+    UI.Button primary_button = 3;
+    string img_url = 4;
 }
 
 message TriggerEmailVerificationRequest {
@@ -59,4 +63,32 @@ message TriggerEmailVerificationRequest {
 }
 message TriggerEmailVerificationResponse {
     enums.VerificationResponseType response_type = 1;
+}
+
+//Pan verification
+message GetPanVerificationScreenRequest{
+
+}
+
+
+message GetPanVerificationScreenResponse {
+    string image_url = 1;
+    string title = 2;
+    string description = 3;
+    string pan_number = 4;
+    google.protobuf.Timestamp date_of_birth = 5;
+    string details_storage_permission_text = 6;
+    string info_usage_permission_text = 7;
+    UI.Button next_button = 8;
+    string no_pan_text = 9;
+}
+
+message TriggerPanVerificationRequest {
+    string pan_number = 1;
+    google.protobuf.Timestamp date_of_birth = 2;
+}
+
+message TriggerPanVerificationResponse {
+    enums.VerificationResponseType response_type = 1;
+    string otp = 2;
 }
