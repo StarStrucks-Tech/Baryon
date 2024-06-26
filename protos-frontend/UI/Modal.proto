@@ -25,10 +25,10 @@ import "protos-frontend/UI/ServerDrivenMessages.proto";
 package UI;
 
 /**
- * Set the Go package name to "Rinnegan/proto-generated/protos-frontend/ui"
+ * Set the Go package name to "Rinnegan/proto-generated/protos-frontend/UI"
  * This option specifies the Go package name to use when generating code
  */
-option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
+option go_package = "Rinnegan/proto-generated/protos-frontend/UI";
 
 /**
  * Modal message

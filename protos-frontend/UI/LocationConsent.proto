@@ -18,8 +18,8 @@ import "protos-frontend/UI/Text.proto";
  */
 package UI;
 
-// Set the Go package name to "Rinnegan/proto-generated/protos-frontend/ui"
-option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
+// Set the Go package name to "Rinnegan/proto-generated/protos-frontend/UI"
+option go_package = "Rinnegan/proto-generated/protos-frontend/UI";
 
 /**
  * LocationConsent message

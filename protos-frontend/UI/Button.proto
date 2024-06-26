@@ -6,7 +6,7 @@ import "protos-frontend/UI/ServerDrivenMessages.proto";
 // Define the package name
 package UI;
 
-option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
+option go_package = "Rinnegan/proto-generated/protos-frontend/UI";
 
 // Define a message structure for a Button.
 message Button {

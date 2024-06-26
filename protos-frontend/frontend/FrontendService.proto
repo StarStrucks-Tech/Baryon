@@ -37,7 +37,7 @@ option go_package = "Rinnegan/proto-generated/protos-frontend/frontend";
  * Service definition for OtherConsentsService
  * This service provides the Other Consents feature.
  */
-service OtherConsentsService {
+service FrontendService {
   /**
    * RPC method to get the Other Consents screen
    * Returns the Other Consents screen for a given user.
