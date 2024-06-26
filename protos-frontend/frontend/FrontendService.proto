@@ -9,24 +9,20 @@ option go_package = "Rinnegan/proto-generated/protos-frontend/frontend";
 // Define the service
 service FrontendService {
     // RPC to get the phone verification
-    rpc GetPhoneVerificationScreen(GetPhoneVerificationScreenRequest) returns (GetPhoneVerificationScreenResponse);
-    rpc TriggerPhoneVerification(TriggerPhoneVerificationRequest) returns (TriggerPhoneVerificationResponse);
+    rpc GetPhoneVerificationScreen(EmptyRequest) returns (GetPhoneVerificationScreenResponse);
+    rpc TriggerPhoneVerification(TriggerPhoneOTPVerificationRequest) returns (TriggerPhoneVerificationResponse);
 
-    rpc GetPhoneOTPVerificationScreen(GetPhoneOTPVerificationScreenRequest) returns (GetPhoneOTPVerificationScreenResponse);
+    rpc GetPhoneOTPVerificationScreen(EmptyRequest) returns (GetPhoneOTPVerificationScreenResponse);
     rpc TriggerPhoneOTPVerification(TriggerPhoneOTPVerificationRequest) returns (TriggerPhoneOTPVerificationResponse);
 
-    rpc GetEmailVerificationScreen(GetEmailVerificationScreenRequest) returns (GetEmailVerificationScreenResponse);
+    rpc GetEmailVerificationScreen(EmptyRequest) returns (GetEmailVerificationScreenResponse);
     rpc TriggerEmailVerification(TriggerEmailVerificationRequest) returns (TriggerEmailVerificationResponse);
     
-    rpc GetPanVerificationScreen(GetPanVerificationScreenRequest) returns (GetPanVerificationScreenResponse);
+    rpc GetPanVerificationScreen(EmptyRequest) returns (GetPanVerificationScreenResponse);
     rpc TriggerPanVerification(TriggerPanVerificationRequest) returns (TriggerPanVerificationResponse);
-}
 
-
-
-// Define the request message
-message GetPhoneVerificationScreenRequest {
-
+    rpc GetLivenessCheckScreen(EmptyRequest) returns (GetLivenessCheckScreenResponse);
+    rpc TriggerLivenessCheck(TriggerLivenessCheckRequest) returns (TriggerLivenessCheckResponse);
 }
 
 
@@ -37,20 +33,11 @@ message GetPhoneVerificationScreenResponse {
    string input_number = 4;
    string phone_number_breifing = 5;
    string img1_url = 6;
-   Button primary_button = 8;
-}
-
-
-message TriggerCheckLivelinessRequest {
-    string user_id = 1;
+   UI.Button primary_button = 8;
 }
 
 message TriggerPhoneVerificationResponse {
     enums.VerificationResponseType response_type = 1;
-}
-
-message GetPhoneOTPVerificationScreenRequest {
-
 }
 
 message GetPhoneOTPVerificationScreenResponse {   
@@ -71,10 +58,6 @@ message TriggerPhoneOTPVerificationResponse {
     enums.VerificationResponseType response_type = 1;
 }
 
-message GetEmailVerificationScreenRequest {
-
-}
-
 message GetEmailVerificationScreenResponse {
     string title = 1;
     string sub_title = 2;
@@ -89,12 +72,6 @@ message TriggerEmailVerificationRequest {
 message TriggerEmailVerificationResponse {
     enums.VerificationResponseType response_type = 1;
 }
-
-//Pan verification
-message GetPanVerificationScreenRequest{
-
-}
-
 
 message GetPanVerificationScreenResponse {
     string image_url = 1;
@@ -118,5 +95,18 @@ message TriggerPanVerificationResponse {
     string otp = 2;
 }
 
+message EmptyRequest {
 
+}
 
+message GetLivenessCheckScreenResponse {
+
+}
+
+message TriggerLivenessCheckRequest {
+    string otp_spoken = 1;
+}
+
+message TriggerLivenessCheckResponse {
+    enums.LivenessCheckStatus liveness_check_status = 1;
+}
