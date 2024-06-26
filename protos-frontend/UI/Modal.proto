@@ -1,27 +1,9 @@
 syntax = "proto3";
 
-/**
- * Import Button message from UI/Button.proto
- * This import allows us to use the Button message in our Modal message
- */
 import "protos-frontend/UI/Button.proto";
-
-/**
- * Import Text message from UI/Text.proto
- * This import allows us to use the Text message in our Modal message
- */
 import "protos-frontend/UI/Text.proto";
-
-/**
- * Import ServerDrivenMessages message from UI/ServerDrivenMessages.proto
- * This import allows us to use the ServerDrivenMessages message in our Modal message
- */
 import "protos-frontend/UI/ServerDrivenMessages.proto";
 
-/**
- * Define the package name
- * This package contains messages related to UI components
- */
 package UI;
 
 /**
