@@ -10,6 +10,8 @@ try() {
     echo "File selected $1"
     protoc --go_out=../Rinnegan/proto-generated \
        --go_opt=paths=source_relative \
+       --go-grpc_out=../Rinnegan/proto-generated \
+       --go-grpc_opt=paths=source_relative \
        "$1"
     if [ $? -ne 0 ]; then
         return 1
