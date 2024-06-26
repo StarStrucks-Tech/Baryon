@@ -1,4 +1,5 @@
 syntax="proto3";
+
 // Define the package name
 package enums;
 
@@ -18,13 +19,13 @@ enum LivenessCheckStatus {
     LIVENESS_CHECK_STATUS_SERVER_FAILURE = 3;
 }
 
-enum ErrorCode {
-    // Default value indicating an unknown error.
-    UNKNOWN_ERROR = 0;
-  
-    // Error code indicating that the request is invalid.
-    INVALID_REQUEST = 1;
-  
-    // Error code indicating that permission is denied for the operation.
-    PERMISSION_DENIED = 2;
-  }
+enum ErrorType {
+  // Default value indicating an unknown error.
+  UNKNOWN_ERROR = 0;
+
+  // Error code indicating that the request is invalid.
+  INVALID_REQUEST = 1;
+
+  // Error code indicating that permission is denied for the operation.
+  PERMISSION_DENIED = 2;
+}

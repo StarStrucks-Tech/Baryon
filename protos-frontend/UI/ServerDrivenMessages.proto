@@ -14,6 +14,7 @@ message CornerRadius {
 
 // Define a message structure for text style properties.
 message TextStyle {
+  
   // The font size of the text.
   float font_size = 1;
 
