@@ -5,22 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-<<<<<<< HEAD
-    "generate:protos:amaterasu": "sh scripts/gencode-react-native-script.sh",
-    "generate:protos:rinnegan": "sh scripts/gencode-go-script.sh"
-=======
     "generate:protos:amaterasu": "bash scripts/gencode-react-native-script.sh",
     "generate:protos:rinnegan": "bash scripts/gencode-go-script.sh"
->>>>>>> develop
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@grpc/proto-loader": "^0.7.13",
-<<<<<<< HEAD
-    "protobufjs": "^7.3.2",
-=======
->>>>>>> develop
     "ts-proto": "^1.180.0"
   }
 }

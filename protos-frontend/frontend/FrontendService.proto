@@ -2,6 +2,7 @@ syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 import "protos-frontend/enums/ResponseType.proto";
 import "protos-frontend/UI/Button.proto";
+import "protos-frontend/frontend/generic/GenericMessages.proto";
 // Define the package name
 package frontend;
 
@@ -9,20 +10,20 @@ option go_package = "Rinnegan/proto-generated/protos-frontend/frontend";
 // Define the service
 service FrontendService {
     // RPC to get the phone verification
-    rpc GetPhoneVerificationScreen(EmptyRequest) returns (GetPhoneVerificationScreenResponse);
-    rpc TriggerPhoneVerification(TriggerPhoneOTPVerificationRequest) returns (TriggerPhoneVerificationResponse);
+    rpc GetPhoneVerificationScreen(generic.EmptyRequest) returns (GetPhoneVerificationScreenResponse){}
+    rpc TriggerPhoneVerification(TriggerPhoneOTPVerificationRequest) returns (TriggerPhoneVerificationResponse){}
 
-    rpc GetPhoneOTPVerificationScreen(EmptyRequest) returns (GetPhoneOTPVerificationScreenResponse);
-    rpc TriggerPhoneOTPVerification(TriggerPhoneOTPVerificationRequest) returns (TriggerPhoneOTPVerificationResponse);
+    rpc GetPhoneOTPVerificationScreen(generic.EmptyRequest) returns (GetPhoneOTPVerificationScreenResponse){}
+    rpc TriggerPhoneOTPVerification(TriggerPhoneOTPVerificationRequest) returns (TriggerPhoneOTPVerificationResponse){}
 
-    rpc GetEmailVerificationScreen(EmptyRequest) returns (GetEmailVerificationScreenResponse);
-    rpc TriggerEmailVerification(TriggerEmailVerificationRequest) returns (TriggerEmailVerificationResponse);
+    rpc GetEmailVerificationScreen(generic.EmptyRequest) returns (GetEmailVerificationScreenResponse){}
+    rpc TriggerEmailVerification(TriggerEmailVerificationRequest) returns (TriggerEmailVerificationResponse){}
     
-    rpc GetPanVerificationScreen(EmptyRequest) returns (GetPanVerificationScreenResponse);
-    rpc TriggerPanVerification(TriggerPanVerificationRequest) returns (TriggerPanVerificationResponse);
+    rpc GetPanVerificationScreen(generic.EmptyRequest) returns (GetPanVerificationScreenResponse){}
+    rpc TriggerPanVerification(TriggerPanVerificationRequest) returns (TriggerPanVerificationResponse){}
 
-    rpc GetLivenessCheckScreen(EmptyRequest) returns (GetLivenessCheckScreenResponse);
-    rpc TriggerLivenessCheck(TriggerLivenessCheckRequest) returns (TriggerLivenessCheckResponse);
+    rpc GetLivenessCheckScreen(generic.EmptyRequest) returns (GetLivenessCheckScreenResponse){}
+    rpc TriggerLivenessCheck(TriggerLivenessCheckRequest) returns (TriggerLivenessCheckResponse){}
 }
 
 
@@ -93,10 +94,6 @@ message TriggerPanVerificationRequest {
 message TriggerPanVerificationResponse {
     enums.VerificationResponseType response_type = 1;
     string otp = 2;
-}
-
-message EmptyRequest {
-
 }
 
 message GetLivenessCheckScreenResponse {
