@@ -50,11 +50,10 @@ message GetPhoneOTPVerificationScreenRequest {
 message GetPhoneOTPVerificationScreenResponse {   
    string title = 1;
    string description = 2;
-   string input_otp = 3;
-   string wait_text = 4;
-   int32 timer_in_seconds = 5;
-   string resend_otp_text = 6;
-   ui.Button primary_button = 7;
+   string wait_text = 3;
+   int32 timer_in_seconds = 4;
+   string resend_otp_text = 5;
+   ui.Button primary_button = 6;
 }
 
 
