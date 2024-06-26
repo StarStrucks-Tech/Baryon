@@ -1,34 +1,43 @@
 syntax = "proto3";
-
-import "protos-frontend/ui/Button.proto";
+import "google/protobuf/timestamp.proto";
 import "protos-frontend/enums/ResponseType.proto";
-
-//Define the package name
+import "protos-frontend/UI/Button.proto";
+// Define the package name
 package frontend;
+
 option go_package = "Rinnegan/proto-generated/protos-frontend/frontend";
-
-//Define the service
+// Define the service
 service FrontendService {
+    // RPC to get the phone verification
+    rpc GetPhoneVerificationScreen(GetPhoneVerificationScreenRequest) returns (GetPhoneVerificationScreenResponse);
+    rpc TriggerPhoneVerification(TriggerPhoneVerificationRequest) returns (TriggerPhoneVerificationResponse);
 
-    // Define the RPC message
- rpc CheckLiveliness(CheckLivelinessRequest) returns (CheckLivelinessResponse);
+    rpc GetPhoneOTPVerificationScreen(GetPhoneOTPVerificationScreenRequest) returns (GetPhoneOTPVerificationScreenResponse);
+    rpc TriggerPhoneOTPVerification(TriggerPhoneOTPVerificationRequest) returns (TriggerPhoneOTPVerificationResponse);
+
+    rpc GetEmailVerificationScreen(GetEmailVerificationScreenRequest) returns (GetEmailVerificationScreenResponse);
+    rpc TriggerEmailVerification(TriggerEmailVerificationRequest) returns (TriggerEmailVerificationResponse);
+    
+    rpc GetPanVerificationScreen(GetPanVerificationScreenRequest) returns (GetPanVerificationScreenResponse);
+    rpc TriggerPanVerification(TriggerPanVerificationRequest) returns (TriggerPanVerificationResponse);
 }
 
 
 
-//Define the request message
-message CheckLivelinessRequest {
-     string Recording_heading = 1;
-    string text = 2;
-    string four_digit = 3;
-    ui.Button primary_button = 4;
+// Define the request message
+message GetPhoneVerificationScreenRequest {
+
 }
 
-message CheckLivelinessResponse {
-    string Recording_heading = 1;
-    string text = 2;
-    string four_digit = 3;
-    ui.Button primary_button = 4;
+
+message GetPhoneVerificationScreenResponse {
+   string title = 1;
+   string sub_title = 2;
+   string phone_number_heading = 3;
+   string input_number = 4;
+   string phone_number_breifing = 5;
+   string img1_url = 6;
+   Button primary_button = 8;
 }
 
 
@@ -36,8 +45,77 @@ message TriggerCheckLivelinessRequest {
     string user_id = 1;
 }
 
-message TriggerCheckLivelinessResponse {
+message TriggerPhoneVerificationResponse {
     enums.VerificationResponseType response_type = 1;
+}
+
+message GetPhoneOTPVerificationScreenRequest {
+
+}
+
+message GetPhoneOTPVerificationScreenResponse {   
+   string title = 1;
+   string description = 2;
+   string wait_text = 3;
+   int32 timer_in_seconds = 4;
+   string resend_otp_text = 5;
+   UI.Button primary_button = 6;
+}
+
+
+message TriggerPhoneOTPVerificationRequest {
+    string otp = 1;
+}
+
+message TriggerPhoneOTPVerificationResponse {
+    enums.VerificationResponseType response_type = 1;
+}
+
+message GetEmailVerificationScreenRequest {
+
+}
+
+message GetEmailVerificationScreenResponse {
+    string title = 1;
+    string sub_title = 2;
+    UI.Button primary_button = 3;
+    string img_url = 4;
+}
+
+message TriggerEmailVerificationRequest {
+    string email_id = 1;
+    string user_name = 2;
+}
+message TriggerEmailVerificationResponse {
+    enums.VerificationResponseType response_type = 1;
+}
+
+//Pan verification
+message GetPanVerificationScreenRequest{
+
+}
+
+
+message GetPanVerificationScreenResponse {
+    string image_url = 1;
+    string title = 2;
+    string description = 3;
+    string pan_number = 4;
+    google.protobuf.Timestamp date_of_birth = 5;
+    string details_storage_permission_text = 6;
+    string info_usage_permission_text = 7;
+    UI.Button next_button = 8;
+    string no_pan_text = 9;
+}
+
+message TriggerPanVerificationRequest {
+    string pan_number = 1;
+    google.protobuf.Timestamp date_of_birth = 2;
+}
+
+message TriggerPanVerificationResponse {
+    enums.VerificationResponseType response_type = 1;
+    string otp = 2;
 }
 
 
