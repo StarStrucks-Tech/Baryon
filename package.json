@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generate:protos:amaterasu": "sh scripts/gencode-react-native-script.sh",
-    "generate:protos:rinnegan": "sh scripts/gencode-go-script.sh"
+    "generate:protos:amaterasu": "bash scripts/gencode-react-native-script.sh",
+    "generate:protos:rinnegan": "bash scripts/gencode-go-script.sh"
   },
   "author": "",
   "license": "ISC",
