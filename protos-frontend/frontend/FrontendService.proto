@@ -100,7 +100,8 @@ message EmptyRequest {
 }
 
 message GetLivenessCheckScreenResponse {
-
+    string otp_to_show = 1 ;
+    UI.Button next_button = 2;
 }
 
 message TriggerLivenessCheckRequest {
