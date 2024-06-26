@@ -29,7 +29,7 @@ import "protos-frontend/UI/CheckBox.proto";
 
 
 // Define the package name
-package Frontend;
+package frontend;
 
 option go_package = "Rinnegan/proto-generated/protos-frontend/frontend";
 
@@ -86,42 +86,42 @@ message GetOtherConsentsScreenResponse {
   /**
    * Image to display on the permission screen
    */
-  ui.Image permission_image = 1;
+  UI.Image permission_image = 1;
 
   /**
    * Header text to display on the permission screen
    */
-  ui.Text permission_header = 2;
+  UI.Text permission_header = 2;
 
   /**
    * Paragraph text to display on the permission screen
    */
-  ui.Text permission_paragraph = 3;
+  UI.Text permission_paragraph = 3;
 
   /**
    * Notifications consent component
    */
-  ui.NotificationsConsent notifications_consent = 4;
+  UI.NotificationsConsent notifications_consent = 4;
 
   /**
    * Location consent component
    */
-  ui.LocationConsent location_consent = 5;
+  UI.LocationConsent location_consent = 5;
 
 /**
    * Next button component
    */
-  ui.Button next_button = 6;
+  UI.Button next_button = 6;
 
   /**
    * Agreement checkbox component
    */
-  ui.CheckBox agreement_checkbox = 7;
+  UI.CheckBox agreement_checkbox = 7;
 
    /**
    * Alert modal component
    */
-  ui.Modal alert_modal = 8;
+  UI.Modal alert_modal = 8;
 
    /**
    * Error type (if any)

@@ -4,7 +4,7 @@ syntax = "proto3";
 import "protos-frontend/UI/ServerDrivenMessages.proto";
 
 // Define the package name
-package ui;
+package UI;
 
 option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
 
@@ -15,5 +15,5 @@ message Text {
   string text = 1;
 
   // The style applied to the text.
-  ui.TextStyle text_style = 2;
+  UI.TextStyle text_style = 2;
 }

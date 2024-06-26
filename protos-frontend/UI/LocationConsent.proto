@@ -16,7 +16,7 @@ import "protos-frontend/UI/Text.proto";
  * Define the package name
  * This package contains messages related to UI components
  */
-package ui;
+package UI;
 
 // Set the Go package name to "Rinnegan/proto-generated/protos-frontend/ui"
 option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
@@ -30,15 +30,15 @@ message LocationConsent {
   /**
    * Image associated with the location consent
    */
-  ui.Image image = 1;
+  UI.Image image = 1;
 
   /**
    * Header text for the location consent
    */
-  ui.Text header = 2;
+  UI.Text header = 2;
 
   /**
    * Text description for the location consent
    */
-  ui.Text text = 3;
+  UI.Text text = 3;
 }
