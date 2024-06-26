@@ -1,6 +1,5 @@
 syntax="proto3";
 
-// Define the package name
 package UI;
 
 option go_package = "Rinnegan/proto-generated/protos-frontend/UI";

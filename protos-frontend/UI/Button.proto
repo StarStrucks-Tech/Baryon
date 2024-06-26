@@ -1,8 +1,8 @@
 syntax="proto3";
 
-// Import the ServerDrivenMessages.proto file to include the TextStyle and CornerRadius message definition.
 import "protos-frontend/UI/ServerDrivenMessages.proto";
-// Define the package name
+import "protos-frontend/UI/Text.proto";
+
 package UI;
 
 option go_package = "Rinnegan/proto-generated/protos-frontend/UI";
@@ -10,14 +10,10 @@ option go_package = "Rinnegan/proto-generated/protos-frontend/UI";
 // Define a message structure for a Button.
 message Button {
    // The text displayed on the button.
-  string text = 1;
-
-  // The style of the text on the button.
-  UI.TextStyle text_style = 2;
-
+    UI.Text text = 1;
   // The corner radius of the button.
-  UI.CornerRadius corner_radius = 3;
+  UI.CornerRadius corner_radius = 2;
 
     // The background color of the button.
-  string background_color = 4;
+  string background_color = 3;
 }
