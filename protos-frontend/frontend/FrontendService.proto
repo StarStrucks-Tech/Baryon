@@ -1,8 +1,11 @@
 syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 import "protos-frontend/enums/ResponseType.proto";
+import "protos-frontend/enums/BiometryTypes.proto";
 import "protos-frontend/UI/Button.proto";
 import "protos-frontend/frontend/generic/GenericMessages.proto";
+import "protos-frontend/UI/Image.proto";
+import "protos-frontend/UI/Text.proto";
 // Define the package name
 package frontend;
 
@@ -24,6 +27,9 @@ service FrontendService {
 
     rpc GetLivenessCheckScreen(generic.EmptyRequest) returns (GetLivenessCheckScreenResponse){}
     rpc TriggerLivenessCheck(TriggerLivenessCheckRequest) returns (TriggerLivenessCheckResponse){}
+    
+    // RPC method to get biometric consent
+    rpc GetBiometricConsentScreen(GetBiometricConsentScreenRequest) returns (GetBiometricConsentScreenResponse){}
 }
 
 
@@ -108,3 +114,26 @@ message TriggerLivenessCheckRequest {
 message TriggerLivenessCheckResponse {
     enums.LivenessCheckStatus liveness_check_status = 1;
 }
+
+// Define the request message
+message GetBiometricConsentScreenRequest {
+    string user_id = 1;
+    enums.BiometryTypes biometry_type = 2;
+    UI.Image top_image = 3;
+    UI.Text header = 4;
+    UI.Text top_text = 5;
+    UI.Image lock_icon = 6;
+    UI.Text paragraph_text = 7;
+    UI.Button primary_button = 8;
+  }
+  
+  // Define the response message
+  message GetBiometricConsentScreenResponse {
+    UI.Image top_image = 1;
+    UI.Text header = 2;
+    UI.Text top_text = 3;
+    UI.Image lock_icon = 4;
+    UI.Text paragraph_text = 5;
+    UI.Button primary_button = 6;
+    enums.ErrorCode error_code=7;
+  }
