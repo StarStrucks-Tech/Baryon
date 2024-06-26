@@ -1,12 +1,12 @@
 syntax = "proto3";
 
 // Import the ServerDrivenMessages.proto file to include the TextStyle message definition.
-import "protos-frontend/ui/ServerDrivenMessages.proto";
+import "protos-frontend/UI/ServerDrivenMessages.proto";
 
 // Define the package name
-package ui;
+package UI;
 
-option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
+option go_package = "Rinnegan/proto-generated/protos-frontend/UI";
 
 // Define a message structure for a Text element.
 message Text {
@@ -14,5 +14,5 @@ message Text {
   string text = 1;
 
   // The style applied to the text.
-  ui.TextStyle text_style = 2;
+  UI.TextStyle text_style = 2;
 }
