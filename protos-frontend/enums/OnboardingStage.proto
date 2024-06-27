@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package enums;
+/**
+ * Set the Go package name to "Rinnegan/proto-generated/protos-frontend/enums"
+ * This option specifies the Go package name to use when generating code
+ */
+ option go_package = "Rinnegan/proto-generated/protos-frontend/enums";
+
+
+enum OnboardingStage {
+    ONBOARDING_STAGE_UNIDENTIFIED = 0;
+    ONBOARDING_STAGE_EMAIL_VERIFICATION = 1;
+    ONBOARDING_STAGE_PHONE_VERIFICATION = 2;
+    ONBOARDING_STAGE_PAN_VERIFICATION = 3;
+    ONBOARDING_STAGE_AADHAR_VERIFICATION = 4;
+    ONBOARDING_STAGE_LIVENESS = 5;
+    ONBOARDING_STAGE_EXTRA_DETAILS = 6;
+    ONBOARDING_STAGE_HOME_STRETCH = 7;
+    ONBOARDING_COMPLETED = 8;
+}

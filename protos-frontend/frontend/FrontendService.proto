@@ -8,7 +8,7 @@ package frontend;
 option go_package = "Rinnegan/proto-generated/protos-frontend/frontend";
 // Define the service
 service FrontendService {
-    // RPC to get the phone verification
+
     rpc GetPhoneVerificationScreen(generic.EmptyRequest) returns (onboarding.GetPhoneVerificationScreenResponse){}
     rpc TriggerPhoneVerification(onboarding.TriggerPhoneOTPVerificationRequest) returns (onboarding.TriggerPhoneVerificationResponse){}
 
@@ -24,8 +24,9 @@ service FrontendService {
     rpc GetLivenessCheckScreen(generic.EmptyRequest) returns (onboarding.GetLivenessCheckScreenResponse){}
     rpc TriggerLivenessCheck(onboarding.TriggerLivenessCheckRequest) returns (onboarding.TriggerLivenessCheckResponse){}
     
-    // RPC method to get biometric consent
     rpc GetBiometricConsentScreen(generic.EmptyRequest) returns (onboarding.GetBiometricConsentScreenResponse){}
 
     rpc GetOtherConsentsScreen(generic.EmptyRequest) returns (onboarding.GetOtherConsentsScreenResponse){}
+
+    rpc GetCurrentOnboardingStage(generic.EmptyRequest) returns (onboarding.GetCurrentOnboardingStageResponse){}
 }
