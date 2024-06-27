@@ -1,0 +1,6 @@
+syntax="proto3";
+  // Message representing an action done by the user
+  message Action {
+    string action_type = 1;
+    string target = 2;
+  }

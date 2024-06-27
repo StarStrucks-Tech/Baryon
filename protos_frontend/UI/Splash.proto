@@ -1,0 +1,19 @@
+syntax="proto3";
+
+import "protos_frontend/ui/ServerDrivenMessages.proto";
+// Define the package name
+package ui;
+
+option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
+// Message representing a splash screen
+message Splash {
+    SplashElement imagelement=1;    
+    string text=2;
+    CornerRadius corner2=3;
+    string bg_color=4;
+  }
+message SplashElement{
+    string img_url=1;
+    string bg_color1=2;
+    CornerRadius corner1=3;
+}

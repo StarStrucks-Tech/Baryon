@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Frontend;
+
+option go_package = "Rinnegan/proto-generated/protos-frontend/frontend";
+
+message LockElement{
+    string img_url=1;
+    string text_head=2;
+    string bg_color=3;
+}

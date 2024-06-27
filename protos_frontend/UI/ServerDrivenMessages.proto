@@ -1,0 +1,13 @@
+syntax="proto3";
+
+// Define the package name
+package ui;
+
+option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
+// defines the corner radii for any element
+message CornerRadius{
+    int32 top_left = 1;
+    int32 top_right = 2;
+    int32 bottom_left = 3;
+    int32 bottom_right = 4;
+}

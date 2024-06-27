@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+
+  import "protos_frontend/ui/action.proto";
+  import "protos_frontend/ui/Splash.proto";
+
+package Frontend;
+
+option go_package = "Rinnegan/proto-generated/protos-frontend/frontend";
+
+service FrontendService {
+  // RPC to get the phone verification
+  rpc GetPhoneVerificationScreen(GetAadhaarConsentRequest) returns (GetAadhaarConsentResponse);
+}
+
+message GetAadhaarConsentRequest {
+  Action action_type = 1;
+  string target = 2;
+}
+message GetAadhaarConsentResponse {
+  string img1_url=1;
+  string title = 2;
+  string sub_texts1 = 3;
+  string img2_url = 4;
+  string sub_texts2 = 5;
+  ui.Splash element1=6; 
+}

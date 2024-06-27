@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Frontend;
+
+option go_package = "Rinnegan/proto-generated/protos-frontend/frontend";
+
+enum ResponseType{
+    OTP_SENT=0;
+    INVALID_NUMBER = 1;
+    SERVER_FAILURE = 2;
+}
