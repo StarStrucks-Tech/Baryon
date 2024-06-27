@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "core/core-enums.proto";
+package core;
+
+
+option go_package = "Rinnegan/proto-generated/core";
+
+// Request header message
+message RequestHeader {
+    string app_id = 1;       // Unique identifier for your app
+    AppVersion app_version = 2;  // Version of the app
+    string secure_token = 3; // Token to authenticate the request, Planning to take it as JWT Token
+    Platform platform = 4;     // Platform making the request (e.g., iOS, Android, Web)
+    google.protobuf.Timestamp timestamp = 5;    // Timestamp of the request
+}
+
+// Response header message
+message ResponseHeader {
+    ResponseCode response_code = 1; // Response code (e.g., 200 for success)
+    string error_message = 2; // Message associated with the response code
+    google.protobuf.Timestamp timestamp = 3;    // Timestamp of the response
+}
+
+// AppVersion message with oneof
+message AppVersion {
+    oneof version {
+        int32 version_number = 1;
+        string version_name = 2;
+    }
+}
