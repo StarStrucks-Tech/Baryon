@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "google/protobuf/timestamp.proto";
+import "core/core-enums.proto";
 package core;
 
 
@@ -17,7 +18,7 @@ message RequestHeader {
 
 // Response header message
 message ResponseHeader {
-    string response_code = 1; // Response code (e.g., 200 for success)
+    ResponseCode response_code = 1; // Response code (e.g., 200 for success)
     string error_message = 2; // Message associated with the response code
     google.protobuf.Timestamp timestamp = 3;    // Timestamp of the response
 }
@@ -28,43 +29,4 @@ message AppVersion {
         int32 version_number = 1;
         string version_name = 2;
     }
-}
-
-enum Platform {
-    PLATFORM_NOT_DEFINED = 0;
-    PLATFORM_ANDROID = 1;
-    PLATFORM_IOS = 2;
-    PLATFORM_WEB = 3;
-}
-enum ResponseCode {
-    // General
-    // frontend will only be concerned about successful or failure from the server , 
-    // anything on server side does not matter for the frontend server hence we can have only 3 cases to suffice frontend responses
-    RESPONSE_CODE_UNSPECIFIED = 0;
-    RESPONSE_CODE_SUCCESS = 1; 
-    RESPONSE_CODE_FAILED = 2;
-
-    // Client Errors
-    RESPONSE_CODE_BAD_REQUEST = 3; // Status Code : 400
-    RESPONSE_CODE_UNAUTHORIZED = 4; // Status Code : 401
-    RESPONSE_CODE_FORBIDDEN = 5; // Status Code : 403
-    RESPONSE_CODE_NOT_FOUND = 6; // Status Code : 404
-    RESPONSE_CODE_METHOD_NOT_ALLOWED = 7; // Status Code : 405
-    RESPONSE_CODE_CONFLICT = 8; // Status Code : 409
-    RESPONSE_CODE_PAYLOAD_TOO_LARGE = 9; // Status Code : 413
-    RESPONSE_CODE_UNSUPPORTED_MEDIA_TYPE = 10; // Status Code : 415
-    RESPONSE_CODE_UNPROCESSABLE_ENTITY = 11; // Status Code : 422
-
-    // Server Errors
-    RESPONSE_CODE_INTERNAL_SERVER_ERROR = 12; // Status Code : 500
-    RESPONSE_CODE_NOT_IMPLEMENTED = 13; // Status Code : 501
-    RESPONSE_CODE_BAD_GATEWAY = 14; // Status Code : 502
-    RESPONSE_CODE_SERVICE_UNAVAILABLE = 15; // Status Code : 503
-    RESPONSE_CODE_GATEWAY_TIMEOUT = 16; // Status Code : 504
-
-    // Application-specific
-    RESPONSE_CODE_VALIDATION_ERROR = 17; // Status Code : 1001
-    RESPONSE_CODE_RESOURCE_EXHAUSTED = 18; // Status Code : 1002
-    RESPONSE_CODE_RATE_LIMIT_EXCEEDED = 19; // Status Code : 1003
-    RESPONSE_CODE_DEPRECATED_API = 20; // Status Code : 1004
 }
