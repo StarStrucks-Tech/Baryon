@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+/**
+ * Import Image message from UI/Image.proto
+ * This import allows us to use the Image message in our Secure message
+ */
+import "protos-frontend/UI/Image.proto";
+
+/**
+ * Import Text message from UI/Text.proto
+ * This import allows us to use the Text message in our Secure message
+ */
+import "protos-frontend/UI/Text.proto";
+
+/**
+ * Define the package name
+ * This package contains messages related to UI components
+ */
+package UI;
+
+/**
+ * Set the Go package name to "Rinnegan/proto-generated/protos-frontend/UI"
+ * This option specifies the Go package name to use when generating code
+ */
+option go_package = "Rinnegan/proto-generated/protos-frontend/UI";
+
+/**
+ * Secure message
+ * Represents a secure UI component with a URL, image, and text.
+ */
+message Secure {
+  /**
+   * URL of the secure component
+   */
+  string url = 1;
+  
+  /**
+   * Image component of the secure component
+   */
+  UI.Image image = 2;
+  
+  /**
+   * Text component of the secure component
+   */
+  UI.Text text = 3;
+}
