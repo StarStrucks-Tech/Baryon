@@ -9,11 +9,10 @@ option go_package = "Rinnegan/proto-generated/protos-frontend/UI";
 
 // Define a message structure for a Button.
 message Button {
-   // The text displayed on the button.
-    UI.Text text = 1;
+  // The text displayed on the button.
+  UI.Text text = 1;
   // The corner radius of the button.
   UI.CornerRadius corner_radius = 2;
-
-    // The background color of the button.
+  // The background color of the button.
   string background_color = 3;
 }
