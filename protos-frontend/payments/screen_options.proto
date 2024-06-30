@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "core/headers.proto";
+import "protos-frontend/ui/Text.proto";
+import "protos-frontend/ui/Image.proto";
+import "protos-frontend/ui/NotificationsConsent.proto";
+import "protos-frontend/ui/LocationConsent.proto";
+import "protos-frontend/ui/Button.proto";
+import "protos-frontend/ui/CheckBox.proto";
+import "protos-frontend/ui/Modal.proto";
+
+package payments;
+
+
+option go_package = "Rinnegan/proto-generated/protos-frontend/payments";
+
+message DummyScreen {
+
+}

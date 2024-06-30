@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "protos-frontend/deeplink/onboarding_deeplinks.proto";
+import "protos-frontend/deeplink/home_deeplinks.proto";
+
+
+package deeplink;
+option go_package = "Rinnegan/proto-generated/protos-frontend/deeplink";
+
+message Deeplink{
+  oneof Pod {
+    OnboardingPodDeeplink onboarding_deeplink = 1;
+    HomePodDeeplink home_deeplink = 2;
+  }
+}
