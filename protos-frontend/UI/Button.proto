@@ -1,18 +1,19 @@
 syntax="proto3";
 
-import "protos-frontend/UI/ServerDrivenMessages.proto";
-import "protos-frontend/UI/Text.proto";
+import "protos-frontend/ui/ServerDrivenMessages.proto";
+import "protos-frontend/ui/Text.proto";
 
-package UI;
+package ui;
 
-option go_package = "Rinnegan/proto-generated/protos-frontend/UI";
+option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
 
 // Define a message structure for a Button.
 message Button {
-  // The text displayed on the button.
-  UI.Text text = 1;
+   // The text displayed on the button.
+    ui.Text text = 1;
   // The corner radius of the button.
-  UI.CornerRadius corner_radius = 2;
-  // The background color of the button.
+  ui.CornerRadius corner_radius = 2;
+
+    // The background color of the button.
   string background_color = 3;
 }

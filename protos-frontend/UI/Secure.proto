@@ -1,29 +1,18 @@
 syntax = "proto3";
 
-import "protos-frontend/UI/Image.proto";
-import "protos-frontend/UI/Text.proto";
+import "protos-frontend/ui/Image.proto";
+import "protos-frontend/ui/Text.proto";
 
-package UI;
+package ui;
 
-option go_package = "Rinnegan/proto-generated/protos-frontend/UI";
+option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
 
 /**
  * Secure message
- * Represents a secure UI component with a URL, image, and text.
+ * Represents a secure ui component with a URL, image, and text.
  */
 message Secure {
-  /**
-   * URL of the secure component
-   */
   string url = 1;
-  
-  /**
-   * Image component of the secure component
-   */
-  UI.Image image = 2;
-  
-  /**
-   * Text component of the secure component
-   */
-  UI.Text text = 3;
+  ui.Image image = 2;
+  ui.Text text = 3;
 }

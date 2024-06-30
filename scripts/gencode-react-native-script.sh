@@ -8,8 +8,8 @@ try() {
 
     # Commands that may fail
     echo "File selected $1"
-    protoc --plugin=./node_modules\\.bin\\protoc-gen-ts_proto \
-     --ts_proto_out=../Amaterasu/src/gencode "$1"
+    protoc --ts_out ../Amaterasu/src/gencode --proto_path ./ \
+      "$1"
     if [ $? -ne 0 ]; then
         return 1
     fi

@@ -1,29 +1,18 @@
 syntax = "proto3";
 
-import "protos-frontend/UI/Image.proto";
-import "protos-frontend/UI/Text.proto";
+import "protos-frontend/ui/Image.proto";
+import "protos-frontend/ui/Text.proto";
 
 package UI;
 
-option go_package = "Rinnegan/proto-generated/protos-frontend/UI";
+option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
 
 /**
  * Terms message
  * Represents a terms component with a URL, image, and text.
  */
 message Terms {
-  /**
-   * URL of the terms component
-   */
   string url = 1;
-  
-  /**
-   * Image component of the terms
-   */
-  Image image = 2;
-  
-  /**
-   * Text component of the terms
-   */
-  Text text = 3;
+  ui.Image image = 2;
+  ui.Text text = 3;
 }

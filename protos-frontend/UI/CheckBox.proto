@@ -1,11 +1,12 @@
 syntax = "proto3";
 
-import "protos-frontend/UI/Text.proto";
+import "protos-frontend/ui/Text.proto";
 
-package UI;
+// Define the package name
+package ui;
 
-// Set the Go package name to "Rinnegan/proto-generated/protos-frontend/UI"
-option go_package = "Rinnegan/proto-generated/protos-frontend/UI";
+// Set the Go package name to "Rinnegan/proto-generated/protos-frontend/ui"
+option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
 
 /**
  * CheckBox message
@@ -20,5 +21,5 @@ message CheckBox {
   /**
    * Text associated with the checkbox
    */
-  UI.Text text = 2;
+  ui.Text text = 2;
 }

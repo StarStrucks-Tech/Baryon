@@ -1,17 +1,8 @@
 syntax = "proto3";
 
 import "protos-frontend/generic/GenericMessages.proto";
-import "protos-frontend/onboarding/rpc.proto";
-
-import "protos-frontend/enums/ResponseType.proto";
-import "protos-frontend/enums/PermissionTypes.proto";
-import "protos-frontend/UI/Button.proto";
-import "protos-frontend/UI/Image.proto";
-import "protos-frontend/UI/Text.proto";
-import "protos-frontend/UI/Terms.proto";
-import "protos-frontend/UI/Secure.proto";
-import "protos-frontend/UI/Modal.proto";
-import "protos-frontend/UI/CheckBox.proto";
+import "protos-frontend/onboarding/rpc_responses.proto";
+import "protos-frontend/onboarding/rpc_requests.proto";
 
 package frontend;
 
@@ -19,115 +10,15 @@ option go_package = "Rinnegan/proto-generated/protos-frontend/frontend";
 // Define the service
 service FrontendService {
 
-    rpc GetPhoneVerificationScreen(generic.EmptyRequest) returns (onboarding.GetPhoneVerificationScreenResponse){}
     rpc TriggerPhoneVerification(onboarding.TriggerPhoneOTPVerificationRequest) returns (onboarding.TriggerPhoneVerificationResponse){}
 
-    rpc GetPhoneOTPVerificationScreen(generic.EmptyRequest) returns (onboarding.GetPhoneOTPVerificationScreenResponse){}
     rpc TriggerPhoneOTPVerification(onboarding.TriggerPhoneOTPVerificationRequest) returns (onboarding.TriggerPhoneOTPVerificationResponse){}
 
-    rpc GetEmailVerificationScreen(generic.EmptyRequest) returns (onboarding.GetEmailVerificationScreenResponse){}
     rpc TriggerEmailVerification(onboarding.TriggerEmailVerificationRequest) returns (onboarding.TriggerEmailVerificationResponse){}
-    
-    rpc GetPanVerificationScreen(generic.EmptyRequest) returns (onboarding.GetPanVerificationScreenResponse){}
+
     rpc TriggerPanVerification(onboarding.TriggerPanVerificationRequest) returns (onboarding.TriggerPanVerificationResponse){}
 
-    rpc GetLivenessCheckScreen(generic.EmptyRequest) returns (onboarding.GetLivenessCheckScreenResponse){}
     rpc TriggerLivenessCheck(onboarding.TriggerLivenessCheckRequest) returns (onboarding.TriggerLivenessCheckResponse){}
-    
-    rpc GetBiometricConsentScreen(generic.EmptyRequest) returns (onboarding.GetBiometricConsentScreenResponse){}
-
-    rpc GetOtherConsentsScreen(generic.EmptyRequest) returns (onboarding.GetOtherConsentsScreenResponse){}
 
     rpc GetCurrentOnboardingStage(generic.EmptyRequest) returns (onboarding.GetCurrentOnboardingStageResponse){}
-
-    rpc GetTermsConditionsScreen(GetTermsConditionsScreenRequest) returns (GetTermsConditionsScreenResponse);
-}
-
-/**
- * Request message for GetTermsConditionsScreen RPC
- * Represents the request to get the Terms & Conditions screen.
- */
-message GetTermsConditionsScreenRequest {
-
-  /**
-   * User ID of the user requesting the screen
-   */
-  string user_id = 1;
-
-  /**
-   * Whether the user has granted permission
-   */
-  bool is_permission_granted = 2;
-
-  /**
-   * List of permissions being requested
-   */
-  repeated enums.PermissionType requested_permissions = 3;
-
- /**
-   * Device ID of the device making the request
-   */
-  string device_id = 4;
-
-  /**
-   * App version of the app making the request
-   */
-  string app_version = 5;
-}
-
-/**
- * Response message for GetTermsConditionsScreen RPC
- * Represents the response to the GetTermsConditionsScreen RPC method.
- */
-message GetTermsConditionsScreenResponse {
-
-  /**
-   * Image to display on the permission screen
-   */
-  UI.Image top_image = 1;
-
-  /**
-   * Header text to display on the permission screen
-   */
-  UI.Text title = 2;
-
-  /**
-   * Paragraph text to display on the permission screen
-   */
-  UI.Text subtitle = 3;
-
-  /**
-   * Notifications consent component
-   */
-  UI.Terms terms = 4;
-
-  /**
-   * Location consent component
-   */
-  UI.Secure secure = 5;
-
-/**
-   * Next button component
-   */
-  UI.Button next_button = 6;
-
-  /**
-   * Agreement checkbox component
-   */
-  UI.CheckBox agreement_checkbox = 7;
-
-  /**
-   *Data sharing checkbox component
-   */
-  UI.CheckBox data_sharing_checkbox = 8;
-
-   /**
-   * Alert modal component
-   */
-  UI.Modal alert_modal = 9;
-
-   /**
-   * Error type (if any)
-   */
-   enums.ErrorType error = 10;
 }
