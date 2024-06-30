@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package onboarding;
+
+option go_package = "Rinnegan/onboarding";
+// Define the service
+service OnboardingService{
+
+
+}
