@@ -12,6 +12,7 @@ try() {
        --go_opt=paths=source_relative \
        --go-grpc_out=../Rinnegan/proto-generated \
        --go-grpc_opt=paths=source_relative \
+       -I ./ \
        "$1"
     if [ $? -ne 0 ]; then
         return 1
