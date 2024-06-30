@@ -1,12 +1,12 @@
 syntax = "proto3";
 
-import "protos-frontend/UI/Image.proto";
-import "protos-frontend/UI/Text.proto";
+import "protos-frontend/ui/Image.proto";
+import "protos-frontend/ui/Text.proto";
 
-package UI;
+package ui;
 
-// Set the Go package name to "Rinnegan/proto-generated/protos-frontend/UI"
-option go_package = "Rinnegan/proto-generated/protos-frontend/UI";
+// Set the Go package name to "Rinnegan/proto-generated/protos-frontend/ui"
+option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
 
 /**
  * LocationConsent message
@@ -17,15 +17,15 @@ message LocationConsent {
   /**
    * Image associated with the location consent
    */
-  UI.Image image = 1;
+  ui.Image image = 1;
 
   /**
    * Header text for the location consent
    */
-  UI.Text header = 2;
+  ui.Text header = 2;
 
   /**
    * Text description for the location consent
    */
-  UI.Text text = 3;
+  ui.Text text = 3;
 }

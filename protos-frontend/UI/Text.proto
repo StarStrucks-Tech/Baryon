@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-import "protos-frontend/UI/ServerDrivenMessages.proto";
+import "protos-frontend/ui/ServerDrivenMessages.proto";
 
-package UI;
+package ui;
 
-option go_package = "Rinnegan/proto-generated/protos-frontend/UI";
+option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
 
 // Define a message structure for a Text element.
 message Text {
@@ -13,5 +13,5 @@ message Text {
   string text = 1;
 
   // The style applied to the text.
-  UI.TextStyle text_style = 2;
+  ui.TextStyle text_style = 2;
 }

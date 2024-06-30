@@ -1,8 +1,8 @@
 syntax="proto3";
 
-package UI;
+package ui;
 
-option go_package = "Rinnegan/proto-generated/protos-frontend/UI";
+option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
 
 // Define a message structure for corner radius properties.
 message CornerRadius {

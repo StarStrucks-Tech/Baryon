@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "protos-frontend/enums/ResponseType.proto";
+import "core/headers.proto";
+import "protos-frontend/enums/OnboardingStage.proto";
+import "protos-frontend/ui/Button.proto";
+
+package onboarding;
+
+option go_package = "Rinnegan/proto-generated/protos-frontend/onboarding";
+
+message TriggerPhoneVerificationResponse {
+    core.ResponseHeader resp_header = 1;
+    enums.VerificationResponseType response_type = 2;
+}
+
+message TriggerPhoneOTPVerificationResponse {
+    core.ResponseHeader resp_header = 1;
+    enums.VerificationResponseType response_type = 2;
+}
+
+message TriggerEmailVerificationResponse {
+    core.ResponseHeader resp_header = 1;
+    enums.VerificationResponseType response_type = 2;
+}
+
+message TriggerPanVerificationResponse {
+    core.ResponseHeader resp_header = 1;
+    enums.VerificationResponseType response_type = 2;
+    string otp = 3;
+}
+
+message TriggerLivenessCheckRequest {
+    core.RequestHeader req_header = 1;
+    string otp_spoken = 2;
+}
+
+  message GetCurrentOnboardingStageResponse {
+    core.ResponseHeader resp_header = 1;
+    enums.OnboardingStage current_stage = 2;
+  }
