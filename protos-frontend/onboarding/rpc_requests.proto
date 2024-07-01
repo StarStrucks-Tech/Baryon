@@ -1,9 +1,9 @@
 syntax = "proto3";
 
 import "google/protobuf/timestamp.proto";
-import "protos-frontend/enums/ResponseType.proto";
+import "protos-frontend/enums/response_types.proto";
 import "core/headers.proto";
-import "protos-frontend/enums/OnboardingStage.proto";
+import "protos-frontend/enums/onboarding_stages.proto";
 import "protos-frontend/ui/Button.proto";
 
 package onboarding;
@@ -27,7 +27,7 @@ message TriggerPanVerificationRequest {
   google.protobuf.Timestamp date_of_birth = 3;
 }
 
-message TriggerLivenessCheckResponse {
-  core.ResponseHeader resp_header = 1;
-  enums.LivenessCheckStatus liveness_check_status = 2;
+message TriggerLivenessCheckRequest {
+  core.RequestHeader req_header = 1;
+  string otp_spoken = 2;
 }

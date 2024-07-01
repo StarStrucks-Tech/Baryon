@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "protos-frontend/generic/GenericMessages.proto";
+import "protos-frontend/generic/generic_messages.proto";
 import "protos-frontend/onboarding/rpc_responses.proto";
 import "protos-frontend/onboarding/rpc_requests.proto";
 

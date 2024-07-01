@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 import "google/protobuf/timestamp.proto";
-import "core/core-enums.proto";
+import "core/core_enums.proto";
 package core;
 
 
