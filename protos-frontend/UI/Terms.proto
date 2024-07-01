@@ -3,7 +3,7 @@ syntax = "proto3";
 import "protos-frontend/ui/Image.proto";
 import "protos-frontend/ui/Text.proto";
 
-package UI;
+package ui;
 
 option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
 
