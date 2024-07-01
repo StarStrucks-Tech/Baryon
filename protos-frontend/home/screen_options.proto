@@ -9,6 +9,7 @@ import "protos-frontend/ui/Button.proto";
 import "protos-frontend/ui/CheckBox.proto";
 import "protos-frontend/ui/Modal.proto";
 
+
 package home;
 
 option go_package = "Rinnegan/proto-generated/protos-frontend/home";

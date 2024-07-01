@@ -8,11 +8,13 @@ package ui;
 option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
 
 /**
- * Terms message
- * Represents a terms component with a URL, image, and text.
+ * Component message
+ * Represents a ui component with a URL, image, and text.
  */
-message Terms {
+message HorizontalIconText {
   string url = 1;
   ui.Image image = 2;
   ui.Text text = 3;
+  bool is_terms = 4;
+  bool is_secure = 5;
 }

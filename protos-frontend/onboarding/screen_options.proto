@@ -10,8 +10,7 @@ import "protos-frontend/ui/CheckBox.proto";
 import "protos-frontend/ui/Modal.proto";
 import "protos-frontend/enums/response_types.proto";
 import "google/protobuf/timestamp.proto";
-import "protos-frontend/ui/Terms.proto";
-import "protos-frontend/ui/Secure.proto";
+import "protos-frontend/ui/horizontal_icon_text";
 
 
 package onboarding;
@@ -116,12 +115,11 @@ message TermsConditionsScreen{
   ui.Image top_image = 2;
   ui.Text title = 3;
   ui.Text subtitle = 4;
-  ui.Terms terms = 5;
-  ui.Secure secure = 6;
-  ui.Button next_button = 7;
-  ui.CheckBox agreement_checkbox = 8;
-  ui.CheckBox data_sharing_checkbox = 9;
-  ui.Modal alert_modal = 10;
-  enums.ErrorType error = 11;
+  repeated ui.HorizontalIconText horizontal_component = 5;
+  ui.Button next_button = 6;
+  ui.CheckBox agreement_checkbox = 7;
+  ui.CheckBox data_sharing_checkbox = 8;
+  ui.Modal alert_modal = 9;
+  enums.ErrorType error = 10;
 
 }
