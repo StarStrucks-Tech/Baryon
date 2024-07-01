@@ -15,6 +15,4 @@ message HorizontalIconText {
   string url = 1;
   ui.Image image = 2;
   ui.Text text = 3;
-  bool is_terms = 4;
-  bool is_secure = 5;
 }
