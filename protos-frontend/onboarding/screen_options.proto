@@ -8,7 +8,7 @@ import "protos-frontend/ui/LocationConsent.proto";
 import "protos-frontend/ui/Button.proto";
 import "protos-frontend/ui/CheckBox.proto";
 import "protos-frontend/ui/Modal.proto";
-import "protos-frontend/enums/ResponseType.proto";
+import "protos-frontend/enums/response_types.proto";
 import "google/protobuf/timestamp.proto";
 import "protos-frontend/ui/Terms.proto";
 import "protos-frontend/ui/Secure.proto";

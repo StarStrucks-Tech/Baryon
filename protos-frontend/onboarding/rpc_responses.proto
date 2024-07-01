@@ -1,10 +1,11 @@
 syntax = "proto3";
 
 import "google/protobuf/timestamp.proto";
-import "protos-frontend/enums/ResponseType.proto";
+import "protos-frontend/enums/response_types.proto";
 import "core/headers.proto";
-import "protos-frontend/enums/OnboardingStage.proto";
+import "protos-frontend/enums/onboarding_stages.proto";
 import "protos-frontend/ui/Button.proto";
+import "protos-frontend/deeplink/deeplink.proto";
 
 package onboarding;
 
@@ -31,12 +32,13 @@ message TriggerPanVerificationResponse {
     string otp = 3;
 }
 
-message TriggerLivenessCheckRequest {
-    core.RequestHeader req_header = 1;
-    string otp_spoken = 2;
+message TriggerLivenessCheckResponse {
+  core.ResponseHeader resp_header = 1;
+  enums.LivenessCheckStatus liveness_check_status = 2;
 }
 
   message GetCurrentOnboardingStageResponse {
     core.ResponseHeader resp_header = 1;
     enums.OnboardingStage current_stage = 2;
+    deeplink.Deeplink next_action = 3;
   }
