@@ -10,6 +10,7 @@ import "protos-frontend/ui/CheckBox.proto";
 import "protos-frontend/ui/Modal.proto";
 import "protos-frontend/enums/response_types.proto";
 import "google/protobuf/timestamp.proto";
+import "protos-frontend/ui/horizontal_icon_text";
 
 
 package onboarding;
@@ -106,4 +107,17 @@ message EmailVerificationScreen {
   string sub_title = 3;
   ui.Button primary_button = 4;
   string img_url = 5;
+}
+
+
+message TermsConditionsScreen{
+  ui.Image top_image = 1;
+  ui.Text title = 2;
+  ui.Text subtitle = 3;
+  repeated ui.HorizontalIconText horizontal_component = 4;
+  ui.Button next_button = 5;
+  ui.CheckBox agreement_checkbox = 6;
+  ui.CheckBox data_sharing_checkbox = 7;
+  ui.Modal alert_modal = 8;
+
 }

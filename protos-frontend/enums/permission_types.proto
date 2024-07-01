@@ -24,4 +24,20 @@ enum PermissionType {
    * This value represents permission for location access
    */
   LOCATION = 1;
+
+   /**
+   * Terms and conditions permission
+   */
+  TERMS_AND_CONDITIONS = 2;
+  
+  /**
+   * Data sharing permission
+   */
+  DATA_SHARING = 3;
+  
+  /**
+   * Other types of permissions
+   */
+  OTHER_PERMISSIONS = 4;
+
 }

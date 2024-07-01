@@ -14,5 +14,6 @@ message OnboardingPodDeeplink {
     onboarding.PhoneVerificationScreen phone_verification_screen = 5;
     onboarding.PhoneOTPScreen phone_otp_screen = 6;
     onboarding.EmailVerificationScreen email_verification_screen = 7;
+    onboarding.TermsConditionsScreen terms_conditions_screen=8;
   }
 }
