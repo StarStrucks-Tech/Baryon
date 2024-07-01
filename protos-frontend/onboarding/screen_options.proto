@@ -111,15 +111,13 @@ message EmailVerificationScreen {
 
 
 message TermsConditionsScreen{
-  core.ResponseHeader resp_header = 1;
-  ui.Image top_image = 2;
-  ui.Text title = 3;
-  ui.Text subtitle = 4;
-  repeated ui.HorizontalIconText horizontal_component = 5;
-  ui.Button next_button = 6;
-  ui.CheckBox agreement_checkbox = 7;
-  ui.CheckBox data_sharing_checkbox = 8;
-  ui.Modal alert_modal = 9;
-  enums.ErrorType error = 10;
+  ui.Image top_image = 1;
+  ui.Text title = 2;
+  ui.Text subtitle = 3;
+  repeated ui.HorizontalIconText horizontal_component = 4;
+  ui.Button next_button = 5;
+  ui.CheckBox agreement_checkbox = 6;
+  ui.CheckBox data_sharing_checkbox = 7;
+  ui.Modal alert_modal = 8;
 
 }
