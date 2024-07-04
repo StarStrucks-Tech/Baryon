@@ -9,7 +9,7 @@ option go_package = "Rinnegan/proto-generated/protos-frontend/deeplink";
 
 message Deeplink {
   oneof Pod {
-    OnboardingPodDeeplink onboarding_deeplink = 1;
-    HomePodDeeplink home_deeplink = 2;
+    deeplink.OnboardingPodDeeplink onboarding_deeplink = 1;
+    deeplink.HomePodDeeplink home_deeplink = 2;
   }
 }

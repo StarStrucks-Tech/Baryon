@@ -26,11 +26,7 @@ try() {
         echo "Processing $proto_file"
 
         # Generate Go code with optional_go_package
-        protoc --go_out=$output_dir \
-       --go_opt=paths=source_relative \
-       --go-grpc_out=../Rinnegan/proto-generated \
-       --go-grpc_opt=paths=source_relative \
-       -I ./ \
+       protoc --ts_out ../Amaterasu/src/gencode --proto_path ./ \
         $proto_file
         if [ ${PIPESTATUS[0]} -ne 0 ]; then
             cat /tmp/protoc_error.log
@@ -45,17 +41,19 @@ catch() {
     echo "Gencode for $1 could not be created"
 }
 
-# Check if the input directory is provided or not
-if [ -z "$1" ]; then
-    echo "Usage: $0 <proto-directory>"
+# Check if at least one input directory is provided
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 <proto-directory> [<proto-directory> ...]"
     exit 1
 fi
 
-# Execute try function and catch errors
-try "$1"
-if [ $? -ne 0 ]; then
-    catch "$1"
-    exit 1
-fi
+for param in "$@"
+do
+    try "$param"
+    if [ $? -ne 0 ]; then
+        catch "$param"
+        exit 1
+    fi
+done
 
 exit 0
