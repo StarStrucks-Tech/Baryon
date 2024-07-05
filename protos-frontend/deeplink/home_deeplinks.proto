@@ -1,0 +1,13 @@
+syntax = "proto3";
+import "protos-frontend/home/screen_options.proto";
+
+package deeplink;
+
+option go_package = "Rinnegan/proto-generated/protos-frontend/deeplink";
+
+message HomePodDeeplink {
+  oneof Screen {
+    // TODO :need to be removed once we have some screens in home
+    home.DummyScreen dummy_screen = 1;
+  }
+}

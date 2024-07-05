@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "protos-frontend/ui/Image.proto";
+import "protos-frontend/ui/Text.proto";
+
+package ui;
+
+option go_package = "Rinnegan/proto-generated/protos-frontend/ui";
+
+/**
+ * Component message
+ * Represents a ui component with a URL, image, and text.
+ */
+message HorizontalIconText {
+  string url = 1;
+  ui.Image image = 2;
+  ui.Text text = 3;
+}

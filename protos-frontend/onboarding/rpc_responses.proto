@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "protos-frontend/enums/response_types.proto";
+import "core/headers.proto";
+import "protos-frontend/enums/onboarding_stages.proto";
+import "protos-frontend/ui/Button.proto";
+import "protos-frontend/deeplink/deeplink.proto";
+
+package onboarding;
+
+option go_package = "Rinnegan/proto-generated/protos-frontend/onboarding";
+
+message TriggerPhoneVerificationResponse {
+    core.ResponseHeader resp_header = 1;
+    enums.VerificationResponseType response_type = 2;
+}
+
+message TriggerPhoneOTPVerificationResponse {
+    core.ResponseHeader resp_header = 1;
+    enums.VerificationResponseType response_type = 2;
+}
+
+message TriggerEmailVerificationResponse {
+    core.ResponseHeader resp_header = 1;
+    enums.VerificationResponseType response_type = 2;
+}
+
+message TriggerPanVerificationResponse {
+    core.ResponseHeader resp_header = 1;
+    enums.VerificationResponseType response_type = 2;
+    string otp = 3;
+}
+
+message TriggerLivenessCheckResponse {
+  core.ResponseHeader resp_header = 1;
+  enums.LivenessCheckStatus liveness_check_status = 2;
+}
+
+  message GetCurrentOnboardingStageResponse {
+    core.ResponseHeader resp_header = 1;
+    enums.OnboardingStage current_stage = 2;
+    deeplink.Deeplink next_action = 3;
+  }
+
+  message EmploymentDetailsResponse {
+    core.ResponseHeader resp_header = 1;
+    enums.EmploymentDetailsResponseType response_type = 2;
+
+  }
+
+  message ParentDetailsResponse {
+    core.ResponseHeader resp_header = 1;
+    enums.ParentDetailsResponseType response_type = 2;
+
+  }
