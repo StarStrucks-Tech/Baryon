@@ -31,3 +31,17 @@ message TriggerLivenessCheckRequest {
   core.RequestHeader req_header = 1;
   string otp_spoken = 2;
 }
+
+message TriggerEmploymentDetailsRequest{
+  core.RequestHeader req_header = 1;
+  string employment_type = 2;
+  int32 annual_income = 3;
+}
+
+message TriggeParentDetailsRequest{
+  core.RequestHeader req_header = 1;
+  string father_full_name = 2;
+  string mother_full_name = 3;
+  repeated ParentDetails nominees = 4;
+  
+}

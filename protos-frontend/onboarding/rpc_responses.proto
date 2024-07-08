@@ -42,3 +42,15 @@ message TriggerLivenessCheckResponse {
     enums.OnboardingStage current_stage = 2;
     deeplink.Deeplink next_action = 3;
   }
+
+  message EmploymentDetailsResponse {
+    core.ResponseHeader resp_header = 1;
+    enums.EmploymentDetailsResponseType response_type = 2;
+
+  }
+
+  message ParentDetailsResponse {
+    core.ResponseHeader resp_header = 1;
+    enums.ParentDetailsResponseType response_type = 2;
+
+  }

@@ -1,0 +1,78 @@
+syntax = "proto3";
+import "../UI/Button.proto";
+import "../UI/ServerDrivenMessages.proto";
+import "../enums/ResponseType.proto";
+
+// Define the package name
+package Phone_Verification;
+
+option go_package = "FrontendService/";
+// Define the service
+service FrontendService {
+    // RPC to get the phone verification
+    rpc GetPhoneVerificationScreen(GetPhoneVerificationScreenRequest) returns (GetPhoneVerificationScreenResponse);
+    rpc TriggerPhoneVerification(TriggerPhoneVerificationRequest) returns (TriggerPhoneVerificationResponse);
+}
+
+// Define the request message
+message GetPhoneVerificationScreenRequest {
+
+}
+
+
+message GetPhoneVerificationScreenResponse {
+   string title = 1;
+   string sub_title = 2;
+   string phone_number_heading = 3;
+   string input_number = 4;
+   string phone_number_breifing = 5;
+   string img1_url = 6;
+   Button primary_button = 8;
+}
+
+
+message TriggerPhoneVerificationRequest {
+    string phone_number = 1;
+}
+
+message TriggerPhoneVerificationResponse {
+    PhoneNumberVerificationResponseType response_type = 1;
+}
+
+
+//employee details
+
+message EmploymentDetailsRequest {
+  string employment_type = 1;
+  int32 annual_income = 2;
+}
+
+message EmploymentDetailsResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+service EmploymentDetailsService {
+  rpc SubmitEmploymentDetails (EmploymentDetailsRequest) returns (EmploymentDetailsResponse);
+}
+
+
+//parent details
+message ParentDetails {
+    string full_name = 1;
+  }
+  
+  message ParentDetailsRequest {
+    string father_full_name = 1;
+    string mother_full_name = 2;
+    repeated ParentDetails nominees = 3;
+  }
+  
+  message ParentDetailsResponse {
+    bool success = 1;
+    string message = 2;
+  }
+  
+  service ParentDetailsService {
+    rpc SubmitParentDetails (ParentDetailsRequest) returns (ParentDetailsResponse);
+  }

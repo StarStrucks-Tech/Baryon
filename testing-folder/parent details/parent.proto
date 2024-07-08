@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+message ParentDetails {
+  string full_name = 1;
+}
+
+message ParentDetailsRequest {
+  string father_full_name = 1;
+  string mother_full_name = 2;
+  repeated ParentDetails nominees = 3;
+}
+
+message ParentDetailsResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+service ParentDetailsService {
+  rpc SubmitParentDetails (ParentDetailsRequest) returns (ParentDetailsResponse);
+}

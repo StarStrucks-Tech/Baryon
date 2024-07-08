@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message EmploymentDetailsRequest {
+  string employment_type = 1;
+  int32 annual_income = 2;
+}
+
+message EmploymentDetailsResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+service EmploymentDetailsService {
+  rpc SubmitEmploymentDetails (EmploymentDetailsRequest) returns (EmploymentDetailsResponse);
+}

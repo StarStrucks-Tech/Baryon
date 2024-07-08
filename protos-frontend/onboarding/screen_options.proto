@@ -121,3 +121,21 @@ message TermsConditionsScreen{
   ui.Modal alert_modal = 8;
 
 }
+
+
+message EmploymentDetailsScreen{
+  ui.image top_image = 1;
+  ui.Text title = 2;
+  ui.Text subtitle = 3;
+  ui.Button next_button = 4;
+
+}
+
+message ParentDetailsScreen{
+  ui.image top_image = 1;
+  ui.Text title = 2;
+  ui.Text subtitle = 3;
+  ui.modal alert_modal = 4;
+  ui.Button next_button = 5;
+
+}
