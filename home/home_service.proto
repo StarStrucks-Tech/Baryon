@@ -4,5 +4,5 @@ package home;
 
 option go_package = "Rinnegan/home";
 // Define the service
-service HomeService{
+service HomeService {
 }

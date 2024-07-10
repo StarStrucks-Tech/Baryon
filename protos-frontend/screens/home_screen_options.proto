@@ -9,11 +9,11 @@ import "protos-frontend/ui/Button.proto";
 import "protos-frontend/ui/CheckBox.proto";
 import "protos-frontend/ui/Modal.proto";
 
-package payments;
 
+package screens;
 
-option go_package = "Rinnegan/proto-generated/protos-frontend/payments";
+option go_package = "Rinnegan/proto-generated/protos-frontend/screens";
 
-message DummyScreen {
+message DummyHomeScreen {
 
 }
