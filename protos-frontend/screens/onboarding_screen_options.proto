@@ -10,7 +10,7 @@ import "protos-frontend/ui/CheckBox.proto";
 import "protos-frontend/ui/Modal.proto";
 import "protos-frontend/enums/response_types.proto";
 import "google/protobuf/timestamp.proto";
-import "protos-frontend/ui/horizontal_icon_text";
+import "protos-frontend/ui/horizontal_icon_text.proto";
 
 
 package screens;

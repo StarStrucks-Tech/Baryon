@@ -78,6 +78,21 @@ npm run generate:protos:rinnegan testing-folder/dummy.proto
 
 This command will generate code from the .proto files located in the `protos` directory.
 
+## Generate Go code for Amaterasu using bash terminal
+```bash
+./scripts/generate_go_code.sh folder_name
+```
+
+## Example
+
+Here is an example of how you can use the bash terminal tp generate go code for an entire folder present in the protos-frontend directory
+
+```bash
+./scripts/generate_go_code.sh payments
+```
+
+This command will generate go code for all the files present in the payments folder follwing the same directory structure.
+
 ## License
 
 This repository is licensed under the [Kubair License].
