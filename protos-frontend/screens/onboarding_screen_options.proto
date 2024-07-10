@@ -13,9 +13,9 @@ import "google/protobuf/timestamp.proto";
 import "protos-frontend/ui/horizontal_icon_text.proto";
 
 
-package onboarding;
+package screens;
 
-option go_package = "Rinnegan/proto-generated/protos-frontend/onboarding";
+option go_package = "Rinnegan/proto-generated/protos-frontend/screens";
 
 message OtherConsentsScreen {
   core.ResponseHeader resp_header = 1;

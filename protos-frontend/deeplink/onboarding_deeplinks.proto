@@ -1,5 +1,5 @@
 syntax = "proto3";
-import "protos-frontend/onboarding/screen_options.proto";
+import "protos-frontend/screens/onboarding_screen_options.proto";
 
 package deeplink;
 
@@ -7,13 +7,13 @@ option go_package = "Rinnegan/proto-generated/protos-frontend/deeplink";
 
 message OnboardingPodDeeplink {
   oneof Screen {
-    onboarding.OtherConsentsScreen other_consent_screen = 1;
-    onboarding.BiometricConsentScreen biometric_consent_screen = 2;
-    onboarding.LivenessCheckScreen liveness_check_screen = 3;
-    onboarding.PanVerificationScreen pan_verification_screen = 4;
-    onboarding.PhoneVerificationScreen phone_verification_screen = 5;
-    onboarding.PhoneOTPScreen phone_otp_screen = 6;
-    onboarding.EmailVerificationScreen email_verification_screen = 7;
-    onboarding.TermsConditionsScreen terms_conditions_screen=8;
+    screens.OtherConsentsScreen other_consent_screen = 1;
+    screens.BiometricConsentScreen biometric_consent_screen = 2;
+    screens.LivenessCheckScreen liveness_check_screen = 3;
+    screens.PanVerificationScreen pan_verification_screen = 4;
+    screens.PhoneVerificationScreen phone_verification_screen = 5;
+    screens.PhoneOTPScreen phone_otp_screen = 6;
+    screens.EmailVerificationScreen email_verification_screen = 7;
+    screens.TermsConditionsScreen terms_conditions_screen=8;
   }
 }
