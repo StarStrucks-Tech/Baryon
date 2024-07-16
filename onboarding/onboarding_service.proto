@@ -4,7 +4,33 @@ package onboarding;
 
 option go_package = "Rinnegan/onboarding";
 // Define the service
-service OnboardingService{
 
+message EmailVerificationRequest {
+  string email = 1;
+}
 
+// The response message indicating the result of the verification request.
+message EmailVerificationResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+// The request message for verifying the code.
+message VerifyCodeRequest {
+  string email = 1;
+  string code = 2;
+}
+
+// The response message for verifying the code.
+message VerifyCodeResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+// The onboarding service definition.
+service OnboardingService {
+  // Sends a verification code to the user's email.
+  rpc SendVerificationCode(EmailVerificationRequest) returns (EmailVerificationResponse);
+  // Verifies the code sent to the user's email.
+  rpc VerifyCode(VerifyCodeRequest) returns (VerifyCodeResponse);
 }
