@@ -33,4 +33,5 @@ message TriggerLivenessCheckRequest {
 message AadharVerificationRequest {
   core.RequestHeader req_header = 1;
   string aadhar_number = 2;
+  string otp = 3;
 }

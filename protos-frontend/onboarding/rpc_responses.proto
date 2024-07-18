@@ -46,4 +46,6 @@ message TriggerLivenessCheckResponse {
     core.ResponseHeader resp_header = 1;
     bool success = 2;
     string message = 3;
+    string otp_transaction_id = 4;
+    string generated_otp = 5;
   }
