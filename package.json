@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate:protos:amaterasu": "bash scripts/gencode-react-native-script.sh",
     "generate:protos:rinnegan": "bash scripts/gencode-go-script.sh",
-    "generate:protos:rinnegan:folder":"bash scripts/generate-go-script:folder.sh",
-    "generate:protos:amaterasu:folder":"bash scripts/generate-react-native-script:folder.sh"
+    "generate:protos:rinnegan:folder":"bash scripts/generate-go-script-folder.sh",
+    "generate:protos:amaterasu:folder":"bash scripts/generate-react-native-script-folder.sh"
   },
   "author": "",
   "license": "ISC",
