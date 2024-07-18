@@ -40,3 +40,10 @@ message TriggerLivenessCheckResponse {
     enums.OnboardingStage current_stage = 2;
     deeplink.Deeplink next_action = 3;
   }
+
+  // Define the Aadhar verification response message
+  message AadharVerificationResponse {
+    core.ResponseHeader resp_header = 1;
+    bool success = 2;
+    string message = 3;
+  }
