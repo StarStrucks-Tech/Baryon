@@ -28,3 +28,10 @@ message TriggerLivenessCheckRequest {
   core.RequestHeader req_header = 1;
   string otp_spoken = 2;
 }
+
+// Define the Aadhar verification request message
+message AadharVerificationRequest {
+  core.RequestHeader req_header = 1;
+  string aadhar_number = 2;
+  string otp = 3;
+}
